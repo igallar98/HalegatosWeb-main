@@ -1,0 +1,102 @@
+---
+layout: default
+immersive_hero: true
+title: Calendario de competiciones de Natacion Master 2025-26
+description: "Consulta el calendario de competiciones de Natacion Master de Halegatos para la temporada 2025-26 con actualizacion automatica de proximas pruebas y eventos ya disputados."
+keywords: calendario natacion master madrid, competiciones natacion halegatos, temporada 2025 2026 natacion master, halegatos natacion calendario
+---
+{% assign disciplines = site.data.disciplines %}
+{% assign calendar = disciplines.swim_calendar %}
+
+<section class="page-hero page-hero--blue swim-season-hero">
+  <div class="container page-hero__inner">
+    <div class="swim-season-hero__content">
+      <p class="eyebrow">{{ calendar.eyebrow }}</p>
+      <h1>{{ calendar.title }}</h1>
+      <p class="page-hero__lead">{{ calendar.description }}</p>
+
+      <div class="swim-season-hero__actions">
+        <a class="button" href="{{ '/join/' | relative_url }}">Inscribete en Natacion</a>
+        <a class="button--light" href="{{ '/disciplines/' | relative_url }}">Volver a disciplinas</a>
+      </div>
+
+      <div class="swim-season-hero__chips">
+        <span class="club-chip">{{ calendar.events | size }} competiciones</span>
+        <span class="club-chip">Actualizacion automatica</span>
+        <span class="club-chip">Vista optimizada para movil</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stack">
+    <div class="swim-season-intro">
+      <article class="swim-season-intro__card">
+        <p class="swim-season-intro__eyebrow">Calendario del equipo</p>
+        <h2>Una pagina propia para seguir la temporada sin recargar Disciplinas</h2>
+        <p>{{ calendar.note }}</p>
+      </article>
+
+      <article class="swim-season-intro__card swim-season-intro__card--accent">
+        <strong>Temporada 2025-26</strong>
+        <p>Fechas, sedes y seguimiento visual del estado de cada prueba del programa mostrado.</p>
+      </article>
+    </div>
+
+    <section class="swim-calendar" data-swim-calendar aria-labelledby="natacion-calendario-title">
+      <div class="swim-calendar__header">
+        <div class="swim-calendar__intro">
+          <p class="eyebrow">{{ calendar.eyebrow }}</p>
+          <h2 id="natacion-calendario-title">{{ calendar.title }}</h2>
+          <p>{{ calendar.description }}</p>
+        </div>
+
+        <aside class="swim-calendar__spotlight" aria-live="polite">
+          <p class="swim-calendar__spotlight-label" data-calendar-status-label>{{ calendar.upcoming_label }}</p>
+          <strong class="swim-calendar__spotlight-title" data-calendar-next-title>Actualizando calendario...</strong>
+          <p class="swim-calendar__spotlight-date" data-calendar-next-date>{{ calendar.note }}</p>
+        </aside>
+      </div>
+
+      <div class="swim-calendar__meta">
+        <p class="swim-calendar__note">
+          <span class="swim-calendar__note-icon">
+            <i data-lucide="waves"></i>
+          </span>
+          <span>{{ calendar.note }}</span>
+        </p>
+        <div class="swim-calendar__summary">
+          <div class="swim-calendar__summary-card">
+            <strong>{{ calendar.events | size }}</strong>
+            <span>citas en la temporada</span>
+          </div>
+          <div class="swim-calendar__summary-card">
+            <strong>2025-26</strong>
+            <span>seguimiento automatico</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="swim-calendar__grid">
+        {% for event in calendar.events %}
+          <article
+            class="swim-event swim-event--{{ event.tone }}"
+            data-calendar-event
+            data-start="{{ event.start }}"
+            data-end="{{ event.end }}"
+          >
+            <div class="swim-event__topline">
+              <p class="swim-event__month">{{ event.month }}</p>
+              <span class="swim-event__tag">{{ event.tag }}</span>
+            </div>
+            <div class="swim-event__date">{{ event.date_label }}</div>
+            <h3>{{ event.title }}</h3>
+            <p class="swim-event__place">{{ event.place }}</p>
+            <div class="swim-event__status" data-calendar-event-status>Programada</div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</section>

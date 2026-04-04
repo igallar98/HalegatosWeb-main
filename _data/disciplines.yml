@@ -144,7 +144,7 @@ items:
         url: /join/
         style: primary
       - label: Calendario de competiciones
-        url: "#natacion-calendario"
+        url: /natacion-calendario/
         style: secondary
   - title: Aguas abiertas
     eyebrow: Fondo, orientacion y comunidad
