@@ -95,13 +95,76 @@ keywords: natacion master madrid, aguas abiertas madrid, saltos trampolin madrid
 
           <div class="discipline-card__actions">
             {% for action in discipline.actions %}
-              <a class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}" href="{{ action.url | relative_url }}">
+              {% assign action_prefix = action.url | slice: 0, 1 %}
+              <a
+                class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}"
+                href="{% if action.url contains '://' or action_prefix == '#' %}{{ action.url }}{% else %}{{ action.url | relative_url }}{% endif %}"
+              >
                 {{ action.label }}
               </a>
             {% endfor %}
           </div>
         </div>
       </article>
+
+      {% if discipline.title == "Natacion" and disciplines.swim_calendar %}
+        <section id="natacion-calendario" class="swim-calendar" data-swim-calendar aria-labelledby="natacion-calendario-title">
+          <div class="swim-calendar__header">
+            <div class="swim-calendar__intro">
+              <p class="eyebrow">{{ disciplines.swim_calendar.eyebrow }}</p>
+              <h2 id="natacion-calendario-title">{{ disciplines.swim_calendar.title }}</h2>
+              <p>{{ disciplines.swim_calendar.description }}</p>
+            </div>
+
+            <aside class="swim-calendar__spotlight" aria-live="polite">
+              <p class="swim-calendar__spotlight-label" data-calendar-status-label>{{ disciplines.swim_calendar.upcoming_label }}</p>
+              <strong class="swim-calendar__spotlight-title" data-calendar-next-title>Actualizando calendario...</strong>
+              <p class="swim-calendar__spotlight-date" data-calendar-next-date>
+                {{ disciplines.swim_calendar.note }}
+              </p>
+            </aside>
+          </div>
+
+          <div class="swim-calendar__meta">
+            <p class="swim-calendar__note">
+              <span class="swim-calendar__note-icon">
+                <i data-lucide="waves"></i>
+              </span>
+              <span>{{ disciplines.swim_calendar.note }}</span>
+            </p>
+            <div class="swim-calendar__summary">
+              <div class="swim-calendar__summary-card">
+                <strong>{{ disciplines.swim_calendar.events | size }}</strong>
+                <span>citas en la temporada</span>
+              </div>
+              <div class="swim-calendar__summary-card">
+                <strong>2025-26</strong>
+                <span>seguimiento automatico</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swim-calendar__grid">
+            {% for event in disciplines.swim_calendar.events %}
+              <article
+                class="swim-event swim-event--{{ event.tone }}"
+                data-calendar-event
+                data-start="{{ event.start }}"
+                data-end="{{ event.end }}"
+              >
+                <div class="swim-event__topline">
+                  <p class="swim-event__month">{{ event.month }}</p>
+                  <span class="swim-event__tag">{{ event.tag }}</span>
+                </div>
+                <div class="swim-event__date">{{ event.date_label }}</div>
+                <h3>{{ event.title }}</h3>
+                <p class="swim-event__place">{{ event.place }}</p>
+                <div class="swim-event__status" data-calendar-event-status>Programada</div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
     {% endfor %}
   </div>
 </section>

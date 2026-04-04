@@ -1713,6 +1713,313 @@ button {
   margin-top: 1.5rem;
 }
 
+.swim-calendar {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin-top: -0.25rem;
+  padding: 2rem;
+  border: 1px solid rgba(17, 35, 56, 0.08);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top right, rgba(35, 176, 222, 0.2), transparent 24%),
+    linear-gradient(135deg, rgba(7, 38, 59, 0.98), rgba(12, 78, 130, 0.95) 50%, rgba(18, 125, 170, 0.9));
+  color: #fff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.swim-calendar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 25%),
+    radial-gradient(circle at left center, rgba(255, 255, 255, 0.08), transparent 30%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.swim-calendar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.swim-calendar__header,
+.swim-calendar__meta {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: start;
+}
+
+.swim-calendar__intro h2 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.swim-calendar__intro p:last-child,
+.swim-calendar__spotlight-date,
+.swim-calendar__note span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.swim-calendar__spotlight {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.35rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.swim-calendar__spotlight-label {
+  margin: 0;
+  color: #9ee7ff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.swim-calendar__spotlight-title {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  line-height: 1.05;
+}
+
+.swim-calendar__spotlight-date {
+  margin: 0;
+}
+
+.swim-calendar__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.swim-calendar__note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.swim-calendar__note-icon i {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.swim-calendar__summary {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.swim-calendar__summary-card {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.swim-calendar__summary-card strong {
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.swim-calendar__summary-card span {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 700;
+}
+
+.swim-calendar__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.swim-event {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  min-height: 100%;
+  padding: 1.2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease,
+    filter 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.swim-event::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 24px 0 0 24px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.swim-event:hover {
+  transform: translateY(-3px);
+}
+
+.swim-event--regional::before {
+  background: linear-gradient(180deg, #70dbff, #3cb4e8);
+}
+
+.swim-event--league::before {
+  background: linear-gradient(180deg, #6dffdf, #1ec1b1);
+}
+
+.swim-event--national::before {
+  background: linear-gradient(180deg, #ffd36c, #ff9a2e);
+}
+
+.swim-event__topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.swim-event__month {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.swim-event__tag,
+.swim-event__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.swim-event__tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.swim-event__date {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.swim-event h3 {
+  margin: 0;
+  font-size: 1.24rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.swim-event__place {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.swim-event__status {
+  background: rgba(158, 231, 255, 0.16);
+  color: #b9f0ff;
+}
+
+.swim-event.is-past {
+  opacity: 0.62;
+  filter: grayscale(0.95) saturate(0.65);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.swim-event.is-past .swim-event__status {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.swim-event.is-current {
+  border-color: rgba(158, 231, 255, 0.9);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+}
+
+.swim-event.is-current .swim-event__status {
+  background: rgba(255, 107, 26, 0.2);
+  color: #ffd0b2;
+}
+
+.swim-event.is-next {
+  transform: translateY(-4px);
+  border-color: rgba(255, 211, 108, 0.85);
+  box-shadow: 0 22px 40px rgba(3, 18, 32, 0.26);
+}
+
+.swim-event.is-next .swim-event__status {
+  background: rgba(255, 211, 108, 0.18);
+  color: #ffe29b;
+}
+
+@media (max-width: 1000px) {
+  .swim-calendar__header,
+  .swim-calendar__meta,
+  .swim-calendar__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .swim-calendar {
+    padding: 1.2rem;
+  }
+
+  .swim-calendar__spotlight,
+  .swim-calendar__note,
+  .swim-calendar__summary-card,
+  .swim-event {
+    padding: 1rem;
+  }
+
+  .swim-calendar__summary {
+    grid-template-columns: 1fr;
+  }
+
+  .swim-event__topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .guides-hero {
   position: relative;
   overflow: hidden;

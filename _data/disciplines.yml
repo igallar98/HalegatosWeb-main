@@ -26,6 +26,105 @@ swim_locations: &swim_locations
     address: Calle de Alc&aacute;ntara 26, 28006 Madrid
     url: https://www.google.com/maps/search/?api=1&query=Centro+Deportivo+Municipal+Viding+Alcantara+Calle+de+Alcantara+26+28006+Madrid
 
+swim_calendar:
+  eyebrow: Calendario de competiciones
+  title: Temporada 2025-26 de Natacion Master
+  description: Un calendario visual para seguir la temporada, localizar la siguiente cita importante y consultar de un vistazo las pruebas ya disputadas.
+  note: Las pruebas pasadas se aten&uacute;an autom&aacute;ticamente y la siguiente competici&oacute;n destacada se actualiza sola con JavaScript.
+  upcoming_label: Proxima cita
+  current_label: En curso ahora
+  finished_label: Temporada completada
+  finished_text: Ya se han disputado todas las competiciones de esta temporada.
+  events:
+    - month: Diciembre
+      date_label: 20-21 dic
+      start: 2025-12-20
+      end: 2025-12-21
+      title: XV Festival de Estilos Master
+      place: Madrid
+      tag: Festival
+      tone: regional
+    - month: Enero
+      date_label: 17-18 ene
+      start: 2026-01-17
+      end: 2026-01-18
+      title: IX Cto. Invierno C. Madrid
+      place: Madrid (M86)
+      tag: Madrid
+      tone: regional
+    - month: Febrero
+      date_label: 5-8 feb
+      start: 2026-02-05
+      end: 2026-02-08
+      title: Cto. de Espa&ntilde;a OPEN Invierno
+      place: Nacional (Castell&oacute;n)
+      tag: Nacional
+      tone: national
+    - month: Febrero
+      date_label: 14-15 feb
+      start: 2026-02-14
+      end: 2026-02-15
+      title: 1&ordf; Jornada Liga Madrid Master
+      place: Madrid
+      tag: Liga Madrid
+      tone: league
+    - month: Marzo
+      date_label: 6-8 mar
+      start: 2026-03-06
+      end: 2026-03-08
+      title: Cto. de Espa&ntilde;a OPEN Fondo
+      place: Nacional (Las Palmas GC)
+      tag: Nacional
+      tone: national
+    - month: Marzo
+      date_label: 28-29 mar
+      start: 2026-03-28
+      end: 2026-03-29
+      title: 2&ordf; Jornada Liga Madrid Master
+      place: Madrid
+      tag: Liga Madrid
+      tone: league
+    - month: Abril
+      date_label: 18-19 abr
+      start: 2026-04-18
+      end: 2026-04-19
+      title: 3&ordf; Jornada Liga Madrid Master
+      place: Madrid
+      tag: Liga Madrid
+      tone: league
+    - month: Abril
+      date_label: 25-26 abr
+      start: 2026-04-25
+      end: 2026-04-26
+      title: Cto. de Espa&ntilde;a Aguas Abiertas
+      place: Nacional (Ibiza)
+      tag: Nacional
+      tone: national
+    - month: Mayo
+      date_label: 9-10 may
+      start: 2026-05-09
+      end: 2026-05-10
+      title: 4&ordf; Jornada Liga Madrid Master
+      place: Madrid
+      tag: Liga Madrid
+      tone: league
+    - month: Mayo
+      date_label: 30-31 may
+      start: 2026-05-30
+      end: 2026-05-31
+      title: XXI Cto. Verano C. Madrid
+      place: Madrid (M86)
+      tag: Madrid
+      tone: regional
+    - month: Julio
+      date_label: 2-5 jul
+      start: 2026-07-02
+      end: 2026-07-05
+      title: Cto. de Espa&ntilde;a OPEN Verano
+      place: Logro&ntilde;o
+      tag: Nacional
+      tone: national
+
 items:
   - title: Natacion
     eyebrow: Tecnica, constancia y competicion
@@ -44,6 +143,9 @@ items:
       - label: Inscribete
         url: /join/
         style: primary
+      - label: Calendario de competiciones
+        url: "#natacion-calendario"
+        style: secondary
   - title: Aguas abiertas
     eyebrow: Fondo, orientacion y comunidad
     image: /static/images/disciplinas aguasabiertas.png
