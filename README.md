@@ -1,6 +1,6 @@
 # Club Halegatos
 
-Sitio estatico preparado para desplegarse en GitHub Pages con Jekyll.
+Sitio estatico en Jekyll preparado para publicarse en GitHub Pages.
 
 ## Estructura
 
@@ -18,6 +18,19 @@ Sitio estatico preparado para desplegarse en GitHub Pages con Jekyll.
 
 ## Despliegue
 
-1. Sube el contenido al repositorio fuente.
-2. Activa GitHub Pages con despliegue desde la rama principal.
-3. Jekyll generara el sitio usando `_config.yml`.
+1. Crea un repositorio en GitHub y sube este proyecto.
+2. Asegurate de que el repositorio se llame `HalegatosWeb` si quieres mantener el `baseurl` actual de [`_config.yml`](./_config.yml).
+3. Haz push a la rama `main`.
+4. En GitHub, ve a `Settings > Pages` y selecciona `GitHub Actions` como fuente.
+5. El workflow [`pages.yml`](./.github/workflows/pages.yml) construira y desplegara el sitio automaticamente.
+
+## Desarrollo local
+
+1. Instala Ruby y Bundler.
+2. Ejecuta `bundle install`.
+3. Arranca el servidor con `bundle exec jekyll serve`.
+
+## Git recomendado
+
+- El `.gitignore` ya excluye caches, dependencias locales de Ruby, logs y la carpeta compilada `_site/`.
+- `Gemfile.lock` se mantiene versionado para que el entorno sea reproducible.

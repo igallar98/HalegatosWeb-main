@@ -2,11 +2,17 @@ _site/
 .jekyll-cache/
 .sass-cache/
 .jekyll-metadata
+.bundle/
+.cache/
+.gem/
+.gem-home/
+.ruby-lsp/
 node_modules/
 migrated_prompt_history/
 dist/
 dist-ssr/
 *.log
+*.tmp
 .DS_Store
 .idea/
 .vscode/*
