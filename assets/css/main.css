@@ -1743,63 +1743,6 @@ button {
   gap: 0.8rem;
 }
 
-.swim-season-intro {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-}
-
-.swim-season-intro__card {
-  padding: 1.5rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(239, 247, 251, 0.92)),
-    var(--color-surface);
-  box-shadow: var(--shadow-soft);
-}
-
-.swim-season-intro__card--accent {
-  background:
-    linear-gradient(150deg, rgba(7, 38, 59, 0.98), rgba(9, 62, 95, 0.92)),
-    radial-gradient(circle at top right, rgba(35, 176, 222, 0.2), transparent 28%);
-  color: #fff;
-}
-
-.swim-season-intro__eyebrow {
-  margin: 0 0 0.75rem;
-  color: var(--color-brand-strong);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.swim-season-intro__card h2,
-.swim-season-intro__card strong {
-  margin: 0 0 0.75rem;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-}
-
-.swim-season-intro__card h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-}
-
-.swim-season-intro__card strong {
-  display: block;
-  font-size: 1.5rem;
-}
-
-.swim-season-intro__card p {
-  margin: 0;
-}
-
-.swim-season-intro__card--accent p,
-.swim-season-intro__card--accent strong {
-  color: #fff;
-}
-
 .swim-calendar {
   position: relative;
   display: grid;
@@ -2078,7 +2021,6 @@ button {
 }
 
 @media (max-width: 1000px) {
-  .swim-season-intro,
   .swim-calendar__header,
   .swim-calendar__meta,
   .swim-calendar__grid {
