@@ -30,7 +30,7 @@ swim_calendar:
   eyebrow: Calendario de competiciones
   title: Temporada 2025-26 de Natacion Master
   description: Un calendario visual para seguir la temporada, localizar la siguiente cita importante y consultar de un vistazo las pruebas ya disputadas.
-  note: Las pruebas pasadas se aten&uacute;an autom&aacute;ticamente y la siguiente competici&oacute;n destacada se actualiza sola con JavaScript.
+  note: Consulta la siguiente cita y el estado de cada prueba de la temporada.
   upcoming_label: Proxima cita
   current_label: En curso ahora
   finished_label: Temporada completada
