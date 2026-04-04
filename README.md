@@ -19,16 +19,17 @@ Sitio estatico en Jekyll preparado para publicarse en GitHub Pages.
 ## Despliegue
 
 1. Crea un repositorio en GitHub y sube este proyecto.
-2. Asegurate de que el repositorio se llame `HalegatosWeb` si quieres mantener el `baseurl` actual de [`_config.yml`](./_config.yml).
-3. Haz push a la rama `main`.
-4. En GitHub, ve a `Settings > Pages` y selecciona `GitHub Actions` como fuente.
-5. El workflow [`pages.yml`](./.github/workflows/pages.yml) construira y desplegara el sitio automaticamente.
+2. Haz push a la rama `main`.
+3. En GitHub, ve a `Settings > Pages` y selecciona `GitHub Actions` como fuente.
+4. El workflow [`pages.yml`](./.github/workflows/pages.yml) construira y desplegara el sitio automaticamente.
+5. No hace falta fijar el nombre del repositorio en [`_config.yml`](./_config.yml): el workflow inyecta el `baseurl` correcto para que funcione tanto en `https://usuario.github.io/repositorio/` como en un dominio propio.
 
 ## Desarrollo local
 
 1. Instala Ruby y Bundler.
 2. Ejecuta `bundle install`.
 3. Arranca el servidor con `bundle exec jekyll serve`.
+4. Si mas adelante publicas en `www.halegatos.com`, solo tendras que configurar el dominio en GitHub Pages y el DNS; las rutas internas del sitio seguiran funcionando.
 
 ## Git recomendado
 
