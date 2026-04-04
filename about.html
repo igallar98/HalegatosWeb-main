@@ -1,0 +1,158 @@
+---
+layout: default
+immersive_hero: true
+title: Club de Natacion Inclusivo en Madrid
+description: "Conoce Halegatos, club de natacion inclusivo en Madrid con historia, logros deportivos, valores claros y comunidad activa."
+keywords: club de natacion inclusivo madrid, club deportivo lgtbi madrid, natacion master madrid, halegatos madrid, club de natacion con aguas abiertas
+---
+{% assign club = site.data.club %}
+
+<section class="club-hero">
+  <div class="club-hero__media">
+    <img src="{{ club.hero.image | relative_url }}" alt="{{ club.hero.alt }}" />
+  </div>
+
+  <div class="container club-hero__inner">
+    <div class="club-hero__content">
+      <p class="eyebrow">{{ club.hero.eyebrow }}</p>
+      <h1>{{ club.hero.title }}</h1>
+      <p class="club-hero__lead">{{ club.hero.lead }}</p>
+
+      <div class="club-hero__chips">
+        {% for chip in club.hero.chips %}
+          <span class="club-chip">{{ chip }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container club-story">
+    <div class="stack">
+      <div class="section-heading">
+        <p class="eyebrow">{{ club.story.eyebrow }}</p>
+        <h2>{{ club.story.title }}</h2>
+        <p>{{ club.story.intro }}</p>
+      </div>
+
+      <div class="club-copy">
+        {% for paragraph in club.story.paragraphs %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <aside class="club-summary-card">
+      <p class="club-summary-card__eyebrow">Lo esencial</p>
+      <h3>{{ club.story.summary_title }}</h3>
+      <ul class="club-summary-list">
+        {% for item in club.story.summary %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="feature-grid club-pillars">
+      {% for pillar in club.pillars %}
+        <article class="feature-card feature-card--home club-pillar">
+          <div class="feature-card__icon">
+            <i data-lucide="{{ pillar.icon }}"></i>
+          </div>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">Trayectoria</p>
+        <h2>Resultados y pasos que explican quiénes somos.</h2>
+      </div>
+      <p>Un club nacido desde la inclusión que hoy compite, crece y deja huella dentro y fuera del agua.</p>
+    </div>
+
+    <div class="club-milestones">
+      {% for milestone in club.milestones %}
+        <article class="club-milestone">
+          <strong>{{ milestone.value }}</strong>
+          <h3>{{ milestone.title }}</h3>
+          <p>{{ milestone.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container club-support-grid">
+    <article class="notice-card club-support-card">
+      <div>
+        <p class="eyebrow">Vida de club</p>
+        <h2>{{ club.support.social.title }}</h2>
+        <p>{{ club.support.social.text }}</p>
+      </div>
+      <div class="club-support-card__badge">
+        <i data-lucide="calendar"></i>
+        <span>Entrenamos, competimos y compartimos.</span>
+      </div>
+    </article>
+
+    <article class="notice-card club-support-card">
+      <div>
+        <p class="eyebrow">Apoyo</p>
+        <h2>{{ club.support.institutional.title }}</h2>
+        <p>{{ club.support.institutional.text }}</p>
+      </div>
+      <div class="club-support-card__badge">
+        <i data-lucide="file-text"></i>
+        <span>Una base importante para sostener la temporada.</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="documentacion">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">Documentación</p>
+        <h2>Todo lo importante, ordenado y listo para consultar.</h2>
+      </div>
+      <p>Dejamos esta zona preparada para enlazar documentos clave del club sin cargar la página con texto innecesario.</p>
+    </div>
+
+    <div class="club-documents">
+      {% for document in club.documents %}
+        {% if document.url and document.url != "" %}
+          <a class="club-document" href="{{ document.url | relative_url }}">
+            <div class="club-document__icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3>{{ document.title }}</h3>
+            <p>{{ document.description }}</p>
+            <span class="club-document__meta">Abrir documento</span>
+          </a>
+        {% else %}
+          <article class="club-document club-document--pending">
+            <div class="club-document__icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3>{{ document.title }}</h3>
+            <p>{{ document.description }}</p>
+            <span class="club-document__meta">Espacio listo para añadir enlace</span>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

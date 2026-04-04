@@ -1,0 +1,29 @@
+---
+layout: default
+title: Pagina no encontrada
+description: La pagina que buscas no existe o ha cambiado de ruta dentro de la web del Club Halegatos.
+keywords: error 404 halegatos, pagina no encontrada club halegatos
+permalink: /404.html
+---
+{% include page-hero.html
+  tone="dark"
+  eyebrow="Pagina no encontrada"
+  title="La ruta que buscas ya no esta aqui."
+  lead="Hemos simplificado la estructura del sitio y puede que algun enlace antiguo haya cambiado."
+%}
+
+<section class="section">
+  <div class="container notice-card">
+    <div>
+      <p class="eyebrow">Vuelve a empezar</p>
+      <h2>Te llevamos a una zona util.</h2>
+      <p>Puedes volver al inicio o ir directamente a la informacion del club y sus disciplinas.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card__actions">
+        <a class="button" href="{{ '/' | relative_url }}">Ir al inicio</a>
+        <a class="button--secondary" href="{{ '/about/' | relative_url }}">Ver el club</a>
+      </div>
+    </div>
+  </div>
+</section>

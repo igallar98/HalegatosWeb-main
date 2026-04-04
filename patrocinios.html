@@ -1,0 +1,95 @@
+---
+layout: default
+immersive_hero: true
+title: Patrocinios Deportivos y Colaboraciones en Madrid
+description: "Patrocina o colabora con Halegatos, club deportivo en Madrid con visibilidad, inclusion, eventos y comunidad activa."
+keywords: patrocinio deportivo madrid, colaboraciones deportivas madrid, patrocinadores club natacion, patrocinio deporte inclusivo, halegatos patrocinio
+---
+{% assign sponsors = site.data.patrocinios %}
+
+<section class="partners-hero">
+  <div class="partners-hero__media">
+    <img src="{{ sponsors.hero.image | relative_url }}" alt="{{ sponsors.hero.alt }}" />
+  </div>
+
+  <div class="container partners-hero__inner">
+    <div class="partners-hero__content">
+      <p class="eyebrow">{{ sponsors.hero.eyebrow }}</p>
+      <h1>{{ sponsors.hero.title }}</h1>
+      <p class="partners-hero__lead">{{ sponsors.hero.lead }}</p>
+
+      <div class="partners-hero__chips">
+        {% for chip in sponsors.hero.chips %}
+          <span class="partners-chip">{{ chip }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container partners-intro">
+    <div class="stack">
+      <div class="section-heading">
+        <p class="eyebrow">{{ sponsors.intro.eyebrow }}</p>
+        <h2>{{ sponsors.intro.title }}</h2>
+        <p>{{ sponsors.intro.text }}</p>
+      </div>
+
+      <ul class="list-check">
+        {% for point in sponsors.intro.points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <aside class="contact-card partners-cta-card">
+      <div class="placeholder-card__icon">
+        <i data-lucide="handshake"></i>
+      </div>
+      <h2>{{ sponsors.cta.title }}</h2>
+      <p>{{ sponsors.cta.text }}</p>
+      <div class="contact-card__actions">
+        <a class="button" href="{{ sponsors.cta.url }}">{{ sponsors.cta.label }}</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container stack">
+    {% for group in sponsors.groups %}
+      <section class="partners-group">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">{{ group.title }}</p>
+            <h2>{{ group.title }}</h2>
+          </div>
+          <p>{{ group.description }}</p>
+        </div>
+
+        <div class="partners-grid">
+          {% for item in group.items %}
+            {% if item.url and item.url != "" %}
+              <a class="partner-card" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                <div class="partner-card__logo">
+                  <span>Logo</span>
+                </div>
+                <h3>{{ item.name }}</h3>
+                <span class="partner-card__meta">Visitar web</span>
+              </a>
+            {% else %}
+              <article class="partner-card partner-card--pending">
+                <div class="partner-card__logo">
+                  <span>Logo</span>
+                </div>
+                <h3>{{ item.name }}</h3>
+                <span class="partner-card__meta">Espacio listo para enlace</span>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</section>

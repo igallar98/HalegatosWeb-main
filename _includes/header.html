@@ -1,0 +1,57 @@
+{% assign current_url = page.url | replace: 'index.html', '' | replace: '.html', '/' %}
+<header class="site-header" data-site-header>
+  <div class="site-header__shell">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio de Club Halegatos">
+      <img src="{{ '/static/images/logo.png' | relative_url }}" alt="Logotipo del Club Halegatos" />
+      <span class="visually-hidden">Club Halegatos</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegacion principal">
+      {% for item in site.data.navigation.main %}
+        <a
+          class="site-nav__link{% if current_url == item.url %} is-active{% endif %}"
+          href="{{ item.url | relative_url }}"
+        >
+          {{ item.title }}
+        </a>
+      {% endfor %}
+      <a
+        class="site-nav__cta{% if current_url == site.data.navigation.cta.url %} is-active{% endif %}"
+        href="{{ site.data.navigation.cta.url | relative_url }}"
+      >
+        {{ site.data.navigation.cta.title }}
+      </a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menu"
+    >
+      <span class="visually-hidden">Abrir menu</span>
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <nav class="mobile-menu__nav" aria-label="Navegacion movil">
+      {% for item in site.data.navigation.main %}
+        <a
+          class="mobile-menu__link{% if current_url == item.url %} is-active{% endif %}"
+          href="{{ item.url | relative_url }}"
+        >
+          {{ item.title }}
+        </a>
+      {% endfor %}
+      <a
+        class="mobile-menu__cta{% if current_url == site.data.navigation.cta.url %} is-active{% endif %}"
+        href="{{ site.data.navigation.cta.url | relative_url }}"
+      >
+        {{ site.data.navigation.cta.title }}
+      </a>
+    </nav>
+  </div>
+</header>

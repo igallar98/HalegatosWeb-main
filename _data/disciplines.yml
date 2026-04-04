@@ -1,0 +1,82 @@
+hero:
+  eyebrow: Disciplinas
+  title: Tres maneras de vivir el agua.
+  lead: Natacion, aguas abiertas y saltos con identidad propia, entrenamientos adaptados y una forma muy Halegatos de vivir el equipo.
+  suggestion:
+    eyebrow: Nuevas ideas para el club
+    title: "Ay&uacute;danos a decidir qu&eacute; viene despu&eacute;s."
+    text: Comparte propuestas para futuras disciplinas y apoya las ideas que m&aacute;s te gusten en nuestro tablero de sugerencias.
+    button_label: "&iexcl;Prop&oacute;n o vota una nueva disciplina!"
+    button_url: https://halegatos.fider.io/
+  image: /static/images/CABECERA-09.png
+  alt: Grupo de deportistas de Halegatos en una sesion de entrenamiento.
+
+swim_levels: &swim_levels
+  - Iniciacion
+  - Basico
+  - Intermedio
+  - Avanzado
+  - Competicion master
+
+swim_locations: &swim_locations
+  - name: Piscina cubierta de 25 m del Centro Deportivo Municipal Marqu&eacute;s de Samaranch
+    address: Paseo Imperial 20, 28005 Madrid
+    url: https://www.google.com/maps/search/?api=1&query=Centro+Deportivo+Municipal+Marques+de+Samaranch+Paseo+Imperial+20+28005+Madrid
+  - name: Piscina cubierta de 25 m del Centro Deportivo Municipal Viding Alc&aacute;ntara
+    address: Calle de Alc&aacute;ntara 26, 28006 Madrid
+    url: https://www.google.com/maps/search/?api=1&query=Centro+Deportivo+Municipal+Viding+Alcantara+Calle+de+Alcantara+26+28006+Madrid
+
+items:
+  - title: Natacion
+    eyebrow: Tecnica, constancia y competicion
+    image: /static/images/disciplinasnatacion.png
+    alt: Nadadores entrenando en piscina.
+    description: Entrenamientos por niveles para mejorar tecnica, resistencia y ritmo de competicion sin perder el lado humano del club.
+    levels_title: Todos los niveles
+    levels: *swim_levels
+    features:
+      - Grupos adaptados por ritmo
+      - Seguimiento tecnico
+      - Preparacion para campeonatos
+    locations_title: Donde entrenamos
+    locations: *swim_locations
+    actions:
+      - label: Inscribete
+        url: /join/
+        style: primary
+  - title: Aguas abiertas
+    eyebrow: Fondo, orientacion y comunidad
+    image: /static/images/disciplinas aguasabiertas.png
+    alt: Grupo durante una actividad de aguas abiertas.
+    description: Salidas, travesias y preparacion especifica para disfrutar del mar y los pantanos con seguridad, progresion y apoyo del equipo.
+    features:
+      - Sesiones de orientacion
+      - Planificacion estacional
+      - Travesias y eventos del club
+    locations_title: Donde entrenamos
+    locations: *swim_locations
+    actions:
+      - label: Inscribete
+        url: /join/
+        style: primary
+      - label: Programa de guias
+        url: /guias-aguas-abiertas/
+        style: secondary
+  - title: Saltos
+    eyebrow: Tecnica, confianza y expresion corporal
+    image: /static/images/disciplinassaltos.png
+    alt: Deportista durante una sesion de saltos.
+    description: Un entorno seguro para aprender desde la base, ganar confianza y pulir la tecnica con progresiones adaptadas a cada persona.
+    features:
+      - Trabajo tecnico progresivo
+      - Perfeccionamiento de entradas
+      - Sesiones para distintos niveles
+    locations_title: Donde entrenamos
+    locations:
+      - name: Centro Deportivo M86
+        address: Calle de Jos&eacute; Mart&iacute;nez de Velasco 3, 28007 Madrid
+        url: https://www.google.com/maps/search/?api=1&query=Centro+Deportivo+M86+Calle+de+Jose+Martinez+de+Velasco+3+28007+Madrid
+    actions:
+      - label: Inscribete
+        url: /join/
+        style: primary

@@ -1,0 +1,101 @@
+---
+layout: default
+title: Club de Natacion Master en Madrid
+description: "Club de natacion master en Madrid con aguas abiertas, saltos, deporte inclusivo y actividades sociales. Entrena con Halegatos."
+keywords: club de natacion madrid, natacion master madrid, club de natacion inclusivo madrid, aguas abiertas madrid, saltos madrid, halegatos
+page_class: home
+---
+{% assign home = site.data.home %}
+<section class="home-hero">
+  <div class="home-hero__media">
+    <img
+      src="{{ home.hero.image | relative_url }}"
+      alt="{{ home.hero.image_alt }}"
+    />
+  </div>
+
+  <div class="container home-hero__content">
+    <div class="badge">
+      <span class="badge__dot"></span>
+      <span>{{ home.hero.badge }}</span>
+    </div>
+    <h1 class="home-hero__title">{{ home.hero.title_html }}</h1>
+    <p class="home-hero__lead">{{ home.hero.lead }}</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ home.hero.primary_url | relative_url }}">
+        <span>{{ home.hero.primary_label }}</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+      <a class="button--light" href="{{ home.hero.secondary_url | relative_url }}">{{ home.hero.secondary_label }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--home-intro">
+  <div class="container">
+    <div class="section-heading section-heading--center">
+      <p class="eyebrow">{{ home.highlights.eyebrow }}</p>
+      <h2>{{ home.highlights.title }}</h2>
+      <p>{{ home.highlights.lead }}</p>
+    </div>
+
+    <div class="feature-grid feature-grid--home">
+      {% for item in home.highlights.items %}
+        <article class="feature-card feature-card--home">
+          <div class="feature-card__icon">
+            <i data-lucide="{{ item.icon }}"></i>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--carousel">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">{{ home.gallery.eyebrow }}</p>
+        <h2>{{ home.gallery.title }}</h2>
+      </div>
+      <p>{{ home.gallery.lead }}</p>
+    </div>
+
+    <div class="media-carousel" data-carousel>
+      <div class="media-carousel__controls">
+        <button class="carousel-button" type="button" data-carousel-prev aria-label="Ver imagen anterior">
+          <i data-lucide="arrow-left"></i>
+        </button>
+        <button class="carousel-button" type="button" data-carousel-next aria-label="Ver imagen siguiente">
+          <i data-lucide="arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="media-carousel__viewport" data-carousel-track tabindex="0" aria-label="Galeria destacada de Halegatos">
+        {% for slide in home.gallery.slides %}
+          <article class="media-slide" data-carousel-slide>
+            <img src="{{ slide.image | relative_url }}" alt="{{ slide.alt }}" loading="lazy" />
+            <div class="media-slide__overlay">
+              <h3>{{ slide.title }}</h3>
+              <p>{{ slide.description }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <div class="media-carousel__dots" data-carousel-dots>
+        {% for slide in home.gallery.slides %}
+          <button
+            class="carousel-dot{% if forloop.first %} is-active{% endif %}"
+            type="button"
+            data-carousel-dot
+            data-index="{{ forloop.index0 }}"
+            aria-label="Ir a la imagen {{ forloop.index }}"
+          ></button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

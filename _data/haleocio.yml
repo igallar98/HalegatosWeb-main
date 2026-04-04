@@ -1,0 +1,58 @@
+hero:
+  eyebrow: HaleOcio
+  title: El equipo no se queda solo en el agua.
+  lead: El ocio tambien forma parte de nuestro ADN.
+  image: /static/images/CABECERA-07.png
+  alt: Grupo de Halegatos compartiendo una actividad de ocio.
+  chips:
+    - Viajes y escapadas
+    - Cultura y comunidad
+    - Planes para conocerse mejor
+
+intro:
+  eyebrow: Mucho mas que deporte
+  title: HaleOcio hace que el club tambien se viva fuera de la piscina.
+  text: Viajes, teatro, fiestas, encuentros y acciones compartidas que ayudan a que la gente se imagine dentro desde el primer dia.
+
+plans:
+  - title: Viaje Halegatos a Viena
+    text: Escapadas para descubrir ciudades, compartir tiempo y seguir haciendo equipo fuera del entrenamiento.
+    image: /static/images/ocio_viajeviena.png
+    alt: Grupo de Halegatos en una escapada.
+  - title: Visita al museo
+    text: Planes culturales para mezclar grupos, descubrir cosas nuevas y compartir una tarde distinta con gente del club.
+    image: /static/images/ocio_VisitaMuseo.png
+    alt: Miembros del club durante una visita cultural.
+  - title: Fiesta y celebracion de cumpleanos
+    text: Excusas perfectas para juntarnos, celebrar y seguir construyendo comunidad tambien fuera del entrenamiento.
+    image: /static/images/ocio_celebracioncumpleaños.png
+    alt: Ambiente festivo de una celebracion del club.
+  - title: Activismo por el Dia Mundial del VIH
+    text: Tambien nos movemos en actividades con visibilidad, compromiso social y presencia comunitaria.
+    image: /static/images/ocio_activismoVIH.png
+    alt: Participacion del club en una accion comunitaria.
+  - title: Plan de cine
+    text: Quedadas sencillas para desconectar, comentar la pelicula despues y seguir ampliando la parte social del club.
+    image: /static/images/ocio_iralcine.png
+    alt: Grupo de Halegatos en una actividad de cine.
+  - title: Tarde de escalada
+    text: Actividades diferentes para probar cosas nuevas, conocernos mejor y compartir retos mas alla del agua.
+    image: /static/images/ocio_irdeescalada.png
+    alt: Integrantes del club en una actividad de escalada.
+  - title: Jornada de nieve y ski
+    text: Planes de temporada para salir de Madrid, pasar el dia juntos y vivir el club en otro contexto.
+    image: /static/images/ocio_sky.png
+    alt: Miembros del club durante una actividad en la nieve.
+
+how:
+  eyebrow: Como funciona HaleOcio
+  title: "&iquest;Quieres sumarte al plan?"
+  text: Entrar es facil y flexible. Te unes, recibes avisos y te apuntas solo a los planes que te apetezcan.
+  steps:
+    - Te unes a la parte de ocio del club o a una disciplina.
+    - Entras en la comunidad de WhatsApp y recibes avisos por mail.
+    - Te apuntas a los planes que quieras desde la app, y tambien puedes proponer.
+
+cta:
+  label: Escribir al club
+  url: mailto:info@halegatos.com

@@ -1,0 +1,107 @@
+---
+layout: default
+immersive_hero: true
+title: Natacion Master, Aguas Abiertas y Saltos en Madrid
+description: "Entrena natacion master, aguas abiertas y saltos en Madrid con Halegatos. Grupos adaptados, tecnica, progresion y comunidad."
+keywords: natacion master madrid, aguas abiertas madrid, saltos trampolin madrid, entrenamientos natacion madrid, halegatos disciplinas
+---
+{% assign disciplines = site.data.disciplines %}
+
+<section class="disciplines-hero">
+  <div class="disciplines-hero__media">
+    <img src="{{ disciplines.hero.image | relative_url }}" alt="{{ disciplines.hero.alt }}" />
+  </div>
+
+  <div class="container disciplines-hero__inner">
+    <div class="disciplines-hero__content">
+      <p class="eyebrow">{{ disciplines.hero.eyebrow }}</p>
+      <h1>{{ disciplines.hero.title }}</h1>
+      <p class="disciplines-hero__lead">{{ disciplines.hero.lead }}</p>
+      {% if disciplines.hero.suggestion %}
+        <article class="disciplines-hero__suggestion">
+          <div class="disciplines-hero__suggestion-copy">
+            <p class="disciplines-hero__suggestion-eyebrow">{{ disciplines.hero.suggestion.eyebrow }}</p>
+            <h2>{{ disciplines.hero.suggestion.title }}</h2>
+            <p>{{ disciplines.hero.suggestion.text }}</p>
+          </div>
+          <a
+            class="button disciplines-hero__suggestion-button"
+            href="{{ disciplines.hero.suggestion.button_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ disciplines.hero.suggestion.button_label }}
+          </a>
+        </article>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stack">
+    {% for discipline in disciplines.items %}
+      <article class="discipline-card discipline-card--cta{% if forloop.index0 == 1 %} discipline-card--reverse{% endif %}">
+        <div class="discipline-card__media">
+          <img src="{{ discipline.image | relative_url }}" alt="{{ discipline.alt }}" loading="lazy" />
+        </div>
+
+        <div class="discipline-card__body">
+          <p class="eyebrow">{{ discipline.eyebrow }}</p>
+          <h2>{{ discipline.title }}</h2>
+          <p>{{ discipline.description }}</p>
+          <ul class="pill-list">
+            {% for feature in discipline.features %}
+              <li class="pill">{{ feature }}</li>
+            {% endfor %}
+          </ul>
+
+          {% if discipline.levels or discipline.locations %}
+            <div class="discipline-card__details">
+              {% if discipline.levels %}
+                <div class="discipline-detail">
+                  <p class="discipline-detail__label">{{ discipline.levels_title | default: "Niveles" }}</p>
+                  <ul class="discipline-level-list">
+                    {% for level in discipline.levels %}
+                      <li class="discipline-level">{{ level }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+
+              {% if discipline.locations %}
+                <div class="discipline-detail">
+                  <p class="discipline-detail__label">{{ discipline.locations_title | default: "Donde entrenamos" }}</p>
+                  <ul class="discipline-location-list">
+                    {% for location in discipline.locations %}
+                      <li>
+                        <a class="discipline-location" href="{{ location.url }}" target="_blank" rel="noopener noreferrer">
+                          <span class="discipline-location__icon">
+                            <i data-lucide="map-pin"></i>
+                          </span>
+                          <span class="discipline-location__content">
+                            <strong>{{ location.name }}</strong>
+                            <span>{{ location.address }}</span>
+                            <span class="discipline-location__link">Ver en Google Maps</span>
+                          </span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="discipline-card__actions">
+            {% for action in discipline.actions %}
+              <a class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}" href="{{ action.url | relative_url }}">
+                {{ action.label }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

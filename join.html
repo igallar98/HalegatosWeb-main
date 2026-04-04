@@ -1,0 +1,143 @@
+---
+layout: default
+immersive_hero: true
+title: "&iquest;Listo para lanzarte?"
+description: "Unete a Halegatos Madrid: deporte, ocio y actividades sociales en una comunidad abierta, diversa y sin etiquetas."
+keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripcion aguas abiertas madrid, inscripcion saltos madrid, halegatos inscripcion
+---
+{% assign join = site.data.join %}
+
+<section class="join-hero">
+  <div class="join-hero__media">
+    <img src="{{ join.hero.image | relative_url }}" alt="{{ join.hero.alt }}" />
+  </div>
+
+  <div class="container join-hero__inner">
+    <div class="join-hero__content">
+      <p class="eyebrow join-hero__eyebrow">{{ join.hero.eyebrow }}</p>
+
+      <h1>{{ join.hero.title_html }}</h1>
+      <p class="join-hero__lead">{{ join.hero.lead }}</p>
+
+      <div class="join-hero__chips">
+        {% for chip in join.hero.chips %}
+          <span class="join-chip">{{ chip }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container join-intro">
+    <div class="section-heading">
+      <p class="eyebrow">{{ join.intro.eyebrow }}</p>
+      <h2>{{ join.intro.title }}</h2>
+      <p>{{ join.intro.text }}</p>
+    </div>
+
+    <div class="join-steps">
+      {% for step in join.intro.steps %}
+        <article class="join-step">
+          <span class="join-step__number">{{ forloop.index }}</span>
+          <div class="join-step__content">
+            {% if step.title %}
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.text }}</p>
+            {% else %}
+              <p>{{ step }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container join-cards">
+    {% for item in join.disciplines %}
+      <article class="join-card join-card--{{ item.accent }}">
+        <div class="join-card__header">
+          <p class="eyebrow">{{ item.eyebrow }}</p>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.description }}</p>
+        </div>
+
+        {% if item.featured_note %}
+          <div class="join-card__feature join-card__feature--{{ item.featured_note.accent | default: item.accent }}">
+            <p class="join-card__feature-label">{{ item.featured_note.label }}</p>
+            <h3>{{ item.featured_note.title }}</h3>
+            <p>{{ item.featured_note.text }}</p>
+          </div>
+        {% endif %}
+
+        <ul class="pill-list">
+          {% for highlight in item.highlights %}
+            <li class="pill">{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+
+        <div class="join-card__info">
+          <div class="join-card__block">
+            <h3>{{ item.email_label }}</h3>
+            <a class="join-card__mail" href="mailto:{{ item.email }}">{{ item.email }}</a>
+          </div>
+
+          <div class="join-card__block join-card__block--notice">
+            <h3>{{ item.first_time_title }}</h3>
+            <p>{{ item.first_time_text }}</p>
+            <a class="join-card__mail" href="mailto:{{ item.contact_email }}">{{ item.contact_email }}</a>
+          </div>
+        </div>
+
+        <div class="join-card__actions">
+          <a class="button" href="{{ item.form_url }}" target="_blank" rel="noopener noreferrer">{{ item.form_label }}</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="notice-card join-help">
+      <div>
+        <p class="eyebrow">Ayuda</p>
+        <h2>{{ join.help.title }}</h2>
+        <p>{{ join.help.text }}</p>
+      </div>
+      <div class="join-help__action">
+        <a class="button" href="mailto:{{ join.help.email }}">{{ join.help.email }}</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <article class="notice-card join-federado">
+      <div>
+        <p class="eyebrow">{{ join.federated.eyebrow }}</p>
+        <h2>{{ join.federated.title }}</h2>
+        <p>{{ join.federated.text }}</p>
+      </div>
+
+      <div class="join-federado__details">
+        <ul class="pill-list">
+          {% for highlight in join.federated.highlights %}
+            <li class="pill">{{ highlight }}</li>
+          {% endfor %}
+        </ul>
+
+        <div class="join-card__block">
+          <h3>{{ join.federated.contact_title }}</h3>
+          <p>{{ join.federated.contact_text }}</p>
+          <a class="join-card__mail" href="mailto:{{ join.federated.email }}">{{ join.federated.email }}</a>
+        </div>
+
+        <a class="button button--secondary" href="mailto:{{ join.federated.email }}">{{ join.federated.action_label }}</a>
+      </div>
+    </article>
+  </div>
+</section>

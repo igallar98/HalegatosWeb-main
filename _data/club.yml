@@ -1,0 +1,77 @@
+hero:
+  eyebrow: El club
+  title: Deporte Máster, equipo y orgullo dentro y fuera del agua.
+  lead: Desde 2001 reunimos natación, aguas abiertas y saltos de trampolín en un club inclusivo, competitivo y muy humano.
+  image: /static/images/CABECERA-01.jpg
+  alt: Nadadores de Halegatos durante una jornada de entrenamiento.
+  chips:
+    - Desde 2001
+    - Madrid
+    - Natación, aguas abiertas y saltos
+
+story:
+  eyebrow: Sobre nosotras y nosotros
+  title: Nacimos para abrir espacio y crecimos compitiendo al máximo nivel.
+  intro: Halegatos se constituyó en 2001 a partir de un grupo de personas que compartía la pasión por el deporte, tanto desde la competición como desde el mantenimiento, la constancia y el disfrute de entrenar en equipo.
+  paragraphs:
+    - El club surgió como una iniciativa positiva e integradora para el colectivo LGTBI+, que buscaba un espacio adecuado para practicar natación en un entorno seguro y respetuoso.
+    - Hoy nuestros deportistas compiten de igual a igual con otros clubes de ámbito regional, nacional e internacional, siempre en un ambiente de tolerancia, compañerismo y deportividad.
+    - Además del programa deportivo, Halegatos organiza actividades sociales y de ocio para seguir construyendo equipo también fuera del agua.
+  summary_title: Lo esencial, de un vistazo
+  summary:
+    - Equipo Máster con una identidad inclusiva y vocación competitiva.
+    - Entrenamientos y competiciones en natación, aguas abiertas y saltos.
+    - Comunidad activa dentro y fuera de la piscina.
+
+pillars:
+  - icon: trophy
+    title: Competimos de verdad
+    text: Participamos en campeonatos regionales, nacionales e internacionales con ambición deportiva y un nivel competitivo consolidado.
+  - icon: heart
+    title: Inclusión con exigencia
+    text: "Nuestro origen sigue presente: entrenar bien, competir bien y convivir mejor en un espacio abierto, seguro y diverso."
+  - icon: users
+    title: Mucho más que entrenar
+    text: El club también vive en sus viajes, encuentros, planes de ocio y actividades que hacen que la comunidad siga creciendo.
+
+milestones:
+  - value: "2001"
+    title: Nace Halegatos
+    text: Arrancamos como club Máster desde la pasión por el agua y el deseo de crear un espacio propio.
+  - value: "2020-2021"
+    title: Primer puesto en Madrid
+    text: Logramos la primera posición conjunta por clubes en los Campeonatos Máster de Invierno y Verano de la Comunidad de Madrid.
+  - value: "2 veces"
+    title: Campeones en aguas abiertas
+    text: Fuimos campeones de la Copa de España de Aguas Abiertas en categoría Máster.
+  - value: "España"
+    title: Medallas y visibilidad
+    text: Hemos sumado medallas en Campeonatos de España Máster y reforzado la presencia de los saltadores Máster.
+
+support:
+  social:
+    title: Deporte y vida de club
+    text: Además de las actividades deportivas, organizamos propuestas de ocio durante la temporada para compartir tiempo, celebrar logros y seguir haciendo equipo.
+  institutional:
+    title: Apoyo institucional
+    text: El programa deportivo de Halegatos y la participación en competiciones oficiales se financian, en parte, gracias a subvenciones del Ayuntamiento de Madrid y de la Comunidad de Madrid.
+
+documents:
+  - title: Estatutos de Halegatos
+    description: Base organizativa y normativa general del club.
+    url: ""
+  - title: Reglamento interno de Halegatos
+    description: Normas de funcionamiento y convivencia del equipo.
+    url: ""
+  - title: Natación - Código de buenas prácticas
+    description: Referencia para entrenar y competir con respeto y seguridad.
+    url: ""
+  - title: Saltos - Código de buenas prácticas
+    description: Criterios de convivencia y funcionamiento para la sección de saltos.
+    url: ""
+  - title: Memoria anual actual
+    description: Resumen de la temporada en curso, resultados y actividad del club.
+    url: ""
+  - title: Memorias de temporadas pasadas
+    description: Archivo histórico para consultar la evolución de Halegatos.
+    url: ""

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es' }}">
+  {% include head.html %}
+  <body class="page{% if page.page_class %} page--{{ page.page_class }}{% endif %}{% if page.immersive_hero %} page--immersive-hero{% endif %}">
+    {% include header.html %}
+
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+main:
+  - title: "El club"
+    url: /about/
+  - title: "Disciplinas"
+    url: /disciplines/
+  - title: "HaleOcio"
+    url: /haleocio/
+  - title: "Patrocinios"
+    url: /patrocinios/
+  - title: "Tienda"
+    url: /shop/
+cta:
+  title: "Inscribete"
+  url: /join/

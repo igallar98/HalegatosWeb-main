@@ -1,0 +1,54 @@
+hero:
+  eyebrow: Patrocinios
+  title: Remamos juntos
+  lead: Colaboraciones que conectan deporte, inclusion, visibilidad y comunidad en un proyecto con identidad propia.
+  image: /static/images/CABECERA-08.png
+  alt: Imagen de ambiente deportivo para la seccion de patrocinios.
+  chips:
+    - Patrocinadores
+    - Colaboradores
+    - Patrocinadores de eventos
+
+intro:
+  eyebrow: Por que colaborar
+  title: Un club con presencia, valores claros y una comunidad muy viva.
+  text: Halegatos ofrece una plataforma honesta para colaborar con un proyecto que une deporte, inclusion y visibilidad. Nos interesa construir relaciones utiles para ambas partes, con sentido y continuidad.
+  points:
+    - Visibilidad vinculada a deporte inclusivo y comunidad activa.
+    - Acciones conjuntas en eventos, equipaciones o actividades del club.
+    - Colaboraciones adaptadas al tipo de marca o institucion.
+
+groups:
+  - title: Patrocinadores
+    description: Marcas y entidades con una vinculacion estable al proyecto y presencia destacada junto al club.
+    items:
+      - name: Nombre patrocinador
+        url: ""
+      - name: Nombre patrocinador
+        url: ""
+      - name: Nombre patrocinador
+        url: ""
+  - title: Colaboradores
+    description: Proyectos y organizaciones que se suman a acciones puntuales, iniciativas compartidas o apoyos concretos.
+    items:
+      - name: Nombre colaborador
+        url: ""
+      - name: Nombre colaborador
+        url: ""
+      - name: Nombre colaborador
+        url: ""
+  - title: Patrocinadores de eventos
+    description: Apoyos asociados a actividades concretas del club, celebraciones, torneos, encuentros o acciones especiales.
+    items:
+      - name: Nombre evento
+        url: ""
+      - name: Nombre evento
+        url: ""
+      - name: Nombre evento
+        url: ""
+
+cta:
+  title: Hablemos de colaboracion
+  text: Si quieres apoyar el proyecto o plantear una alianza, escribenos y vemos como construir una propuesta util para ambas partes.
+  label: Contactar para patrocinios
+  url: mailto:info@halegatos.com

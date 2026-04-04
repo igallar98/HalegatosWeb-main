@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img src="{{ '/static/images/logo.png' | relative_url }}" alt="Logotipo del Club Halegatos" />
+      <p>
+        Natacion, aguas abiertas y una comunidad inclusiva con ambicion deportiva,
+        vida social y acompanamiento real en cada etapa.
+      </p>
+      <a class="site-footer__cta" href="{{ site.data.navigation.cta.url | relative_url }}">{{ site.data.navigation.cta.title }}</a>
+    </div>
+
+    <div>
+      <h2 class="site-footer__title">Nuestras piscinas</h2>
+      <ul class="footer-list footer-list--pools">
+        <li>CDM Marques de Samaranch</li>
+        <li>Piscina Viding Alcantara</li>
+        <li>Centro Deportivo M86</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="site-footer__title">Contacto</h2>
+      <ul class="footer-list footer-list--icons">
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:info@halegatos.com">info@halegatos.com</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Madrid</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-footer__civic">
+      <p class="site-footer__eyebrow">Institucional</p>
+      <div class="site-footer__placeholder" aria-label="Espacio reservado para el logo del Ayuntamiento de Madrid">
+        <span>Logo del Ayuntamiento de Madrid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>&copy; {{ site.time | date: "%Y" }} Club Halegatos. Todos los derechos reservados.</p>
+    <div class="footer-legal">
+      <a href="{{ '/legal/' | relative_url }}">Aviso legal</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacidad</a>
+      <a href="{{ '/terminos/' | relative_url }}">Terminos y condiciones</a>
+    </div>
+  </div>
+</footer>

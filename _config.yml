@@ -1,0 +1,16 @@
+title: Club Halegatos
+name: Club Halegatos
+description: Club de natacion master en Madrid con aguas abiertas, saltos, deporte inclusivo y vida social.
+keywords: club de natacion madrid, natacion master madrid, aguas abiertas madrid, saltos madrid, club deportivo inclusivo madrid, halegatos
+lang: es
+url: "https://igallar98.github.io"
+baseurl: "/HalegatosWeb"
+permalink: pretty
+exclude:
+  - _site
+  - node_modules
+  - migrated_prompt_history
+  - package.json
+  - package-lock.json
+  - .eleventy.js
+  - metadata.json

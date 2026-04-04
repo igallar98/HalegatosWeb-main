@@ -1,0 +1,89 @@
+---
+layout: default
+immersive_hero: true
+title: Ocio, Viajes y Actividades de Club en Madrid
+description: "Descubre HaleOcio, la parte social de Halegatos con viajes, cultura, fiestas, activismo y planes de club en Madrid."
+keywords: ocio club deportivo madrid, actividades sociales madrid, viajes club natacion, haleocio, club lgtbi madrid ocio
+---
+{% assign ocio = site.data.haleocio %}
+
+<section class="ocio-hero">
+  <div class="ocio-hero__media">
+    <img src="{{ ocio.hero.image | relative_url }}" alt="{{ ocio.hero.alt }}" />
+  </div>
+
+  <div class="container ocio-hero__inner">
+    <div class="ocio-hero__content">
+      <p class="eyebrow">{{ ocio.hero.eyebrow }}</p>
+      <h1>{{ ocio.hero.title }}</h1>
+      <p class="ocio-hero__lead">{{ ocio.hero.lead }}</p>
+
+      <div class="ocio-hero__chips">
+        {% for chip in ocio.hero.chips %}
+          <span class="ocio-chip">{{ chip }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">{{ ocio.intro.eyebrow }}</p>
+        <h2>{{ ocio.intro.title }}</h2>
+      </div>
+      <p>{{ ocio.intro.text }}</p>
+    </div>
+
+    <div class="ocio-grid">
+      {% for item in ocio.plans %}
+        <article class="ocio-card">
+          <div class="ocio-card__media">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
+          </div>
+          <div class="ocio-card__body">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container ocio-how">
+    <div class="stack">
+      <div class="section-heading">
+        <p class="eyebrow">{{ ocio.how.eyebrow }}</p>
+        <h2>{{ ocio.how.title }}</h2>
+        <p>{{ ocio.how.text }}</p>
+      </div>
+
+      <div class="ocio-steps">
+        {% for step in ocio.how.steps %}
+          <article class="ocio-step">
+            <span class="ocio-step__number">{{ forloop.index }}</span>
+            <p>{{ step }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <aside class="contact-card ocio-cta-card">
+      <div class="placeholder-card__icon">
+        <i data-lucide="sparkles"></i>
+      </div>
+      <h2>Te avisamos de los proximos planes</h2>
+      <p>
+        Si te interesa la parte social del club tanto como la deportiva, te contamos
+        como sumarte y empezar a recibir propuestas.
+      </p>
+      <div class="contact-card__actions">
+        <a class="button" href="{{ ocio.cta.url }}">{{ ocio.cta.label }}</a>
+      </div>
+    </aside>
+  </div>
+</section>

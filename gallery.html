@@ -1,0 +1,33 @@
+---
+layout: default
+title: Fotos de Natacion, Eventos y Club en Madrid
+description: "Galeria de Halegatos con fotos de natacion, aguas abiertas, saltos, eventos sociales y vida de club en Madrid."
+keywords: fotos club natacion madrid, galeria natacion madrid, fotos aguas abiertas, eventos halegatos, galeria club deportivo
+---
+{% include page-hero.html
+  tone="blue"
+  eyebrow="Imagenes"
+  title="Galeria del club"
+  lead="La estructura queda preparada para incorporar fotos en una carpeta estatica sin tocar el layout global."
+%}
+
+<section class="section">
+  <div class="container notice-card">
+    <div>
+      <p class="eyebrow">Proxima mejora</p>
+      <h2>Una galeria facil de alimentar.</h2>
+      <p>
+        El siguiente paso natural es anadir fotografias locales en una carpeta estatica y
+        renderizarlas desde datos o una coleccion. La base ya esta lista para hacerlo.
+      </p>
+    </div>
+    <div class="contact-card">
+      <h2>Mientras tanto</h2>
+      <p>Puedes usar esta pagina para destacar eventos, albumes o cronicas visuales del club.</p>
+      <div class="contact-card__actions">
+        <a class="button" href="{{ '/news/' | relative_url }}">Ir a noticias</a>
+        <a class="button--secondary" href="{{ '/join/' | relative_url }}">Contactar</a>
+      </div>
+    </div>
+  </div>
+</section>
