@@ -4,7 +4,7 @@ description: Club de natacion master en Madrid con aguas abiertas, saltos, depor
 keywords: club de natacion madrid, natacion master madrid, aguas abiertas madrid, saltos madrid, club deportivo inclusivo madrid, halegatos
 lang: es
 url: ""
-baseurl: ""
+baseurl: "/HalegatosWeb-main"
 permalink: pretty
 exclude:
   - _site
