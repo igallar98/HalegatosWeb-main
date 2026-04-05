@@ -9,6 +9,10 @@ main:
     url: /patrocinios/
   - title: "Tienda"
     url: https://halegatos.playoffinformatica.com/Botiga.php
-cta:
-  title: "Inscribete"
-  url: /join/
+ctas:
+  - title: "Inscribete"
+    url: /join/
+    style: primary
+  - title: "Acceso socios"
+    url: https://halegatos.playoffinformatica.com/
+    style: secondary

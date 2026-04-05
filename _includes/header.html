@@ -2,7 +2,9 @@
 <header class="site-header" data-site-header>
   <div class="site-header__shell">
     <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio de Club Halegatos">
-      <img src="{{ '/static/images/logo.png' | relative_url }}" alt="Logotipo del Club Halegatos" />
+      <span class="site-logo site-logo--header" aria-hidden="true">
+        <img src="{{ '/static/images/logo-25a%C3%B1os.png' | relative_url }}" alt="Logotipo 25 anos del Club Halegatos" />
+      </span>
       <span class="visually-hidden">Club Halegatos</span>
     </a>
 
@@ -21,12 +23,22 @@
           </a>
         {% endif %}
       {% endfor %}
-      <a
-        class="site-nav__cta{% if current_url == site.data.navigation.cta.url %} is-active{% endif %}"
-        href="{{ site.data.navigation.cta.url | relative_url }}"
-      >
-        {{ site.data.navigation.cta.title }}
-      </a>
+      <div class="site-nav__actions">
+        {% for cta in site.data.navigation.ctas %}
+          {% if cta.url contains '://' %}
+            <a class="site-nav__cta{% if cta.style == 'secondary' %} site-nav__cta--secondary{% endif %}" href="{{ cta.url }}">
+              {{ cta.title }}
+            </a>
+          {% else %}
+            <a
+              class="site-nav__cta{% if cta.style == 'secondary' %} site-nav__cta--secondary{% endif %}{% if current_url == cta.url %} is-active{% endif %}"
+              href="{{ cta.url | relative_url }}"
+            >
+              {{ cta.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </nav>
 
     <button
@@ -58,12 +70,22 @@
           </a>
         {% endif %}
       {% endfor %}
-      <a
-        class="mobile-menu__cta{% if current_url == site.data.navigation.cta.url %} is-active{% endif %}"
-        href="{{ site.data.navigation.cta.url | relative_url }}"
-      >
-        {{ site.data.navigation.cta.title }}
-      </a>
+      <div class="mobile-menu__actions">
+        {% for cta in site.data.navigation.ctas %}
+          {% if cta.url contains '://' %}
+            <a class="mobile-menu__cta{% if cta.style == 'secondary' %} mobile-menu__cta--secondary{% endif %}" href="{{ cta.url }}">
+              {{ cta.title }}
+            </a>
+          {% else %}
+            <a
+              class="mobile-menu__cta{% if cta.style == 'secondary' %} mobile-menu__cta--secondary{% endif %}{% if current_url == cta.url %} is-active{% endif %}"
+              href="{{ cta.url | relative_url }}"
+            >
+              {{ cta.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </nav>
   </div>
 </header>

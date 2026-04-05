@@ -57,6 +57,24 @@ keywords: patrocinio deportivo madrid, colaboraciones deportivas madrid, patroci
 </section>
 
 <section class="section section--alt">
+  <div class="container">
+    <article class="notice-card partners-scholarships">
+      <div class="partners-scholarships__content">
+        <p class="eyebrow">{{ sponsors.scholarships.eyebrow }}</p>
+        <h2>{{ sponsors.scholarships.title }}</h2>
+        <p>{{ sponsors.scholarships.text }}</p>
+      </div>
+
+      <ul class="list-check partners-scholarships__list">
+        {% for point in sponsors.scholarships.points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt">
   <div class="container stack">
     {% for group in sponsors.groups %}
       <section class="partners-group">

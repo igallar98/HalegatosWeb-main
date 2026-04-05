@@ -54,6 +54,21 @@ keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripci
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <article class="notice-card join-help">
+      <div>
+        <p class="eyebrow">Ayuda</p>
+        <h2>{{ join.help.title }}</h2>
+        <p>{{ join.help.text }}</p>
+      </div>
+      <div class="join-help__action">
+        <a class="button" href="mailto:{{ join.help.email }}">{{ join.help.email }}</a>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section class="section section--alt">
   <div class="container join-cards">
     {% for item in join.disciplines %}
@@ -78,66 +93,30 @@ keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripci
           {% endfor %}
         </ul>
 
-        <div class="join-card__info">
-          <div class="join-card__block">
-            <h3>{{ item.email_label }}</h3>
-            <a class="join-card__mail" href="mailto:{{ item.email }}">{{ item.email }}</a>
+        {% if item.contacts %}
+          <div class="join-card__info">
+            {% for contact in item.contacts %}
+              <div class="join-card__block{% if forloop.first and item.accent == 'orange' %} join-card__block--notice{% endif %}">
+                <h3>{{ contact.title }}</h3>
+                <p>{{ contact.text }}</p>
+                <a class="join-card__mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+              </div>
+            {% endfor %}
           </div>
-
-          <div class="join-card__block join-card__block--notice">
-            <h3>{{ item.first_time_title }}</h3>
-            <p>{{ item.first_time_text }}</p>
-            <a class="join-card__mail" href="mailto:{{ item.contact_email }}">{{ item.contact_email }}</a>
-          </div>
-        </div>
+        {% endif %}
 
         <div class="join-card__actions">
-          <a class="button" href="{{ item.form_url }}" target="_blank" rel="noopener noreferrer">{{ item.form_label }}</a>
+          {% for action in item.actions %}
+            <a
+              class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}"
+              href="{{ action.url }}"
+              {% if action.url contains '://' %}target="_blank" rel="noopener noreferrer"{% endif %}
+            >
+              {{ action.label }}
+            </a>
+          {% endfor %}
         </div>
       </article>
     {% endfor %}
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <article class="notice-card join-help">
-      <div>
-        <p class="eyebrow">Ayuda</p>
-        <h2>{{ join.help.title }}</h2>
-        <p>{{ join.help.text }}</p>
-      </div>
-      <div class="join-help__action">
-        <a class="button" href="mailto:{{ join.help.email }}">{{ join.help.email }}</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="section section--alt">
-  <div class="container">
-    <article class="notice-card join-federado">
-      <div>
-        <p class="eyebrow">{{ join.federated.eyebrow }}</p>
-        <h2>{{ join.federated.title }}</h2>
-        <p>{{ join.federated.text }}</p>
-      </div>
-
-      <div class="join-federado__details">
-        <ul class="pill-list">
-          {% for highlight in join.federated.highlights %}
-            <li class="pill">{{ highlight }}</li>
-          {% endfor %}
-        </ul>
-
-        <div class="join-card__block">
-          <h3>{{ join.federated.contact_title }}</h3>
-          <p>{{ join.federated.contact_text }}</p>
-          <a class="join-card__mail" href="mailto:{{ join.federated.email }}">{{ join.federated.email }}</a>
-        </div>
-
-        <a class="button button--secondary" href="mailto:{{ join.federated.email }}">{{ join.federated.action_label }}</a>
-      </div>
-    </article>
   </div>
 </section>

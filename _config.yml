@@ -14,3 +14,5 @@ exclude:
   - package-lock.json
   - .eleventy.js
   - metadata.json
+  - jekyll-server.out.log
+  - jekyll-server.err.log

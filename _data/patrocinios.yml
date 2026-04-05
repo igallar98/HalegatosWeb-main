@@ -18,6 +18,15 @@ intro:
     - Acciones conjuntas en eventos, equipaciones o actividades del club.
     - Colaboraciones adaptadas al tipo de marca o institucion.
 
+scholarships:
+  eyebrow: Becas e integracion
+  title: El deporte tambien puede ser una puerta de entrada
+  text: Halegatos trabaja con ONGs y entidades sociales para facilitar, cuando es posible, el acceso al club de personas refugiadas o solicitantes de asilo. Buscamos que el deporte tambien sea un espacio de acompanamiento, pertenencia e integracion.
+  points:
+    - Colaboraciones con impacto social real dentro y fuera del agua.
+    - Itinerarios de acompanamiento adaptados a cada situacion.
+    - Una forma concreta de apoyar inclusion, salud y comunidad.
+
 groups:
   - title: Patrocinadores
     description: Marcas y entidades con una vinculacion estable al proyecto y presencia destacada junto al club.
