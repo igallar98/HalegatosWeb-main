@@ -1,68 +1,32 @@
 hero:
   eyebrow: Inscripciones
-  title_html: "&iquest;Listo para lanzarte?"
-  lead: Te ayudamos antes de que rellenes nada, te contamos por donde empezar y te dejamos a mano las vias de alta para natacion, saltos y HaleFederado.
+  title_html: "&iquest;Listo para unirte?"
+  lead: Te contamos por donde empezar y te dejamos a mano las vias de inscripcion disponibles.
   image: /static/images/CABECERA-03.jpg
   alt: Deportistas de Halegatos durante una sesion en piscina.
   chips:
-    - Entrenamiento de prueba
-    - Formularios claros
-    - Acompanamiento por correo
+    - Proceso claro
+    - Inscripcion sencilla
+    - Ayuda por correo
 
 intro:
   eyebrow: Asi funciona
-  title: Tres pasos simples para empezar.
-  text: Queremos que el proceso sea claro, corto y sin presion.
+  title: Un proceso simple para empezar
+  text: Queremos que inscribirte sea facil y rapido.
   steps:
-    - title: Escribenos
-      text: Dinos si te interesa natacion, aguas abiertas, saltos o HaleFederado.
-    - title: Te orientamos
-      text: En natacion puedes pedir un entrenamiento de prueba; en saltos te recomendamos escribir antes para acompanar mejor el alta.
-    - title: Eliges tu via
-      text: Completa el formulario o gestiona el acceso con nosotrxs y ya formas parte del club.
+    - title: Elige modalidad
+      text: Puedes apuntarte a saltos o pedir informacion sobre HaleFederado.
+    - title: Completa tu alta
+      text: Rellena el formulario o escribenos por correo y te ayudamos con el proceso.
 
 disciplines:
-  - eyebrow: Natacion
-    title: Natacion y aguas abiertas
-    description: Aqui tienes el formulario y el acceso al entrenamiento de prueba. Si necesitas ayuda antes de decidir, te acompanamos por correo.
-    featured_note:
-      accent: blue
-      label: Natacion
-      title: Entrena un dia con nosotrxs
-      text: Si quieres probar antes de inscribirte, reserva un entrenamiento de prueba y te orientamos con calma.
-    accent: blue
-    highlights:
-      - Formulario de preinscripcion
-      - Entrenamiento de prueba
-      - Acompanamiento por correo
-    contacts:
-      - title: Te ayudamos antes de empezar
-        text: Si no tienes claro que grupo te encaja o quieres resolver dudas de natacion y aguas abiertas, escribenos y te acompanamos.
-        email: inscripciones@halegatos.com
-    actions:
-      - label: Formulario de preinscripcion
-        url: https://halegatos.playoffinformatica.com/preinscripcion/10/FORMULARIO-INSCRIPCION-A-NATACION-Y-AGUAS-ABIERTAS-TEMPORADA-2024-2025/
-        style: primary
-      - label: Entrenamiento de prueba
-        url: https://halegatos.playoffinformatica.com/preinscripcion/17/2025-26-SOLICITUD-ENTRENAMIENTO-DE-PRUEBA/
-        style: secondary
   - eyebrow: Saltos
     title: Saltos de trampolin
-    description: En saltos te recomendamos contactar primero por correo para explicarte el proceso, aunque dejamos tambien el formulario disponible.
-    featured_note:
-      accent: orange
-      label: Recomendado
-      title: Contacta antes de rellenar el formulario
-      text: Te explicamos edades minimas, funcionamiento de la seccion y como encajar mejor antes de tramitar el alta.
+    description: Si te interesa la seccion de saltos, te recomendamos escribirnos primero para orientarte y explicarte el proceso.
     accent: orange
-    highlights:
-      - Seccion especifica de saltos
-      - Contacto previo recomendado
-      - Formulario separado y claro
-      - Acompanamiento por correo
     contacts:
-      - title: Correo de saltos
-        text: Si te interesa la seccion, escribenos antes a este correo y te contamos el proceso completo.
+      - title: Contacto de saltos
+        text: Escribenos y te contamos como funciona la seccion y como inscribirte.
         email: saltos@halegatos.com
     actions:
       - label: Contactar con saltos
@@ -71,23 +35,14 @@ disciplines:
       - label: Formulario de inscripcion
         url: https://docs.google.com/forms/d/e/1FAIpQLSeCQLCKGxlPrOvjjY70FHBZo6oRv0J5QLpd3DNY8PnIxXWWGg/viewform
         style: secondary
+
   - eyebrow: HaleFederado
     title: Entrena con Halegatos estes donde estes
-    description: HaleFederado es la modalidad para quienes quieren pertenecer al club aunque no entrenen presencialmente con nosotrxs.
-    featured_note:
-      accent: blue
-      label: HaleFederado
-      title: Cuota con federacion incluida
-      text: La cuota incluye estar federadxs con Halegatos y recibir entrenamientos online por correo, ademas de seguir conectadxs al club.
+    description: Una modalidad para formar parte del club aunque no entrenes presencialmente con nosotrxs.
     accent: blue
-    highlights:
-      - Federacion incluida con Halegatos
-      - Entrenamientos online por correo
-      - Actividades de ocio con el club
-      - Pensado para quienes viven fuera o viajan
     contacts:
-      - title: Contacto HaleFederado
-        text: Si te interesa esta modalidad, escribenos y te contamos como funciona, cuanto cuesta y como darte de alta.
+      - title: Informacion HaleFederado
+        text: Escribenos y te contamos como funciona y como darte de alta.
         email: halegatos@halegatos.com
     actions:
       - label: Quiero informacion
@@ -95,6 +50,6 @@ disciplines:
         style: primary
 
 help:
-  title: Te ayudamos antes de que rellenes nada
-  text: Si no tienes claro donde encajas, si cumples la edad minima o que modalidad te conviene mas, escribenos primero y te orientamos con calma.
+  title: &iquest;Tienes dudas?
+  text: Si no sabes que opcion encaja mejor contigo, escribenos y te ayudamos.
   email: inscripciones@halegatos.com

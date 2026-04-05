@@ -1,9 +1,9 @@
 ---
 layout: default
 immersive_hero: true
-title: "&iquest;Listo para lanzarte?"
+title: "&iquest;Listo para unirte?"
 description: "Unete a Halegatos Madrid: deporte, ocio y actividades sociales en una comunidad abierta, diversa y sin etiquetas."
-keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripcion aguas abiertas madrid, inscripcion saltos madrid, halegatos inscripcion
+keywords: inscripcion halegatos madrid, saltos madrid, halefederado, club deportivo lgtbi madrid
 ---
 {% assign join = site.data.join %}
 
@@ -41,12 +41,8 @@ keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripci
         <article class="join-step">
           <span class="join-step__number">{{ forloop.index }}</span>
           <div class="join-step__content">
-            {% if step.title %}
-              <h3>{{ step.title }}</h3>
-              <p>{{ step.text }}</p>
-            {% else %}
-              <p>{{ step }}</p>
-            {% endif %}
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.text }}</p>
           </div>
         </article>
       {% endfor %}
@@ -79,24 +75,10 @@ keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripci
           <p>{{ item.description }}</p>
         </div>
 
-        {% if item.featured_note %}
-          <div class="join-card__feature join-card__feature--{{ item.featured_note.accent | default: item.accent }}">
-            <p class="join-card__feature-label">{{ item.featured_note.label }}</p>
-            <h3>{{ item.featured_note.title }}</h3>
-            <p>{{ item.featured_note.text }}</p>
-          </div>
-        {% endif %}
-
-        <ul class="pill-list">
-          {% for highlight in item.highlights %}
-            <li class="pill">{{ highlight }}</li>
-          {% endfor %}
-        </ul>
-
         {% if item.contacts %}
           <div class="join-card__info">
             {% for contact in item.contacts %}
-              <div class="join-card__block{% if forloop.first and item.accent == 'orange' %} join-card__block--notice{% endif %}">
+              <div class="join-card__block">
                 <h3>{{ contact.title }}</h3>
                 <p>{{ contact.text }}</p>
                 <a class="join-card__mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
