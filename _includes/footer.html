@@ -3,8 +3,9 @@
     <div class="site-footer__brand">
       <img src="{{ '/static/images/logo.png' | relative_url }}" alt="Logotipo del Club Halegatos" />
       <p>
-        Natacion, aguas abiertas y una comunidad inclusiva con ambicion deportiva,<br />
-        vida social y acompanamiento real en cada etapa.
+        Natacion, aguas abiertas y una comunidad inclusiva<br />
+        con ambicion deportiva, vida social y acompanamiento<br />
+        real en cada etapa.
       </p>
       <a class="site-footer__cta" href="{{ site.data.navigation.cta.url | relative_url }}">{{ site.data.navigation.cta.title }}</a>
     </div>
@@ -41,8 +42,14 @@
       <div class="site-footer__civic-logos" aria-label="Logos institucionales">
         <img
           class="site-footer__logo site-footer__logo--madrid"
-          src="{{ '/static/images/logo-ayuntamiento-madrid.jpg' | relative_url }}"
+          src="{{ '/static/images/logo-ayuntamiento-madrid.png' | relative_url }}"
           alt="Logotipo del Ayuntamiento de Madrid"
+          loading="lazy"
+        />
+        <img
+          class="site-footer__logo site-footer__logo--comunidad"
+          src="{{ '/static/images/comunidad-madrid.png' | relative_url }}"
+          alt="Logotipo de la Comunidad de Madrid"
           loading="lazy"
         />
         <img
