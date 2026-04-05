@@ -2172,6 +2172,12 @@ button {
   color: rgba(255, 255, 255, 0.88);
 }
 
+.shop-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
 .shop-coming {
   display: grid;
   gap: 1.4rem;
@@ -2527,17 +2533,30 @@ button {
   text-transform: uppercase;
 }
 
-.site-footer__placeholder {
+.site-footer__civic {
   display: grid;
-  place-items: center;
-  min-height: 180px;
-  padding: 1.2rem;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.04);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.76);
-  font-weight: 700;
+  gap: 1rem;
+}
+
+.site-footer__civic-logos {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.site-footer__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-footer__logo--madrid {
+  max-width: 175px;
+}
+
+.site-footer__logo--adi {
+  max-width: 190px;
 }
 
 .site-footer__brand img {

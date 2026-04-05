@@ -12,11 +12,10 @@ hero:
   alt: Grupo de deportistas de Halegatos en una sesion de entrenamiento.
 
 swim_levels: &swim_levels
-  - Iniciacion
-  - Basico
-  - Intermedio
-  - Avanzado
-  - Competicion master
+  - Caballito de mar
+  - Sirena
+  - Delf&iacute;n
+  - Barracuda
 
 swim_locations: &swim_locations
   - name: Piscina cubierta de 25 m del Centro Deportivo Municipal Marqu&eacute;s de Samaranch
@@ -131,7 +130,7 @@ items:
     image: /static/images/disciplinasnatacion.png
     alt: Nadadores entrenando en piscina.
     description: Entrenamientos por niveles para mejorar tecnica, resistencia y ritmo de competicion sin perder el lado humano del club.
-    levels_title: Todos los niveles
+    levels_title: Niveles
     levels: *swim_levels
     features:
       - Grupos adaptados por ritmo

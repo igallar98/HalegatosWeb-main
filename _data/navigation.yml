@@ -8,7 +8,7 @@ main:
   - title: "Patrocinios"
     url: /patrocinios/
   - title: "Tienda"
-    url: /shop/
+    url: https://halegatos.playoffinformatica.com/Botiga.php
 cta:
   title: "Inscribete"
   url: /join/

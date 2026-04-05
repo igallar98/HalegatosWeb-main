@@ -8,9 +8,11 @@
 
     <nav class="site-nav" aria-label="Navegacion principal">
       {% for item in site.data.navigation.main %}
+        {% assign item_prefix = item.url | slice: 0, 1 %}
+        {% assign item_is_external = item.url contains '://' or item_prefix == '#' %}
         <a
-          class="site-nav__link{% if current_url == item.url %} is-active{% endif %}"
-          href="{{ item.url | relative_url }}"
+          class="site-nav__link{% if current_url == item.url and item_is_external == false %} is-active{% endif %}"
+          href="{% if item_is_external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
         >
           {{ item.title }}
         </a>
@@ -39,9 +41,11 @@
   <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
     <nav class="mobile-menu__nav" aria-label="Navegacion movil">
       {% for item in site.data.navigation.main %}
+        {% assign item_prefix = item.url | slice: 0, 1 %}
+        {% assign item_is_external = item.url contains '://' or item_prefix == '#' %}
         <a
-          class="mobile-menu__link{% if current_url == item.url %} is-active{% endif %}"
-          href="{{ item.url | relative_url }}"
+          class="mobile-menu__link{% if current_url == item.url and item_is_external == false %} is-active{% endif %}"
+          href="{% if item_is_external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
         >
           {{ item.title }}
         </a>

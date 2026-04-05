@@ -3,7 +3,7 @@
     <div class="site-footer__brand">
       <img src="{{ '/static/images/logo.png' | relative_url }}" alt="Logotipo del Club Halegatos" />
       <p>
-        Natacion, aguas abiertas y una comunidad inclusiva con ambicion deportiva,
+        Natacion, aguas abiertas y una comunidad inclusiva con ambicion deportiva,<br />
         vida social y acompanamiento real en cada etapa.
       </p>
       <a class="site-footer__cta" href="{{ site.data.navigation.cta.url | relative_url }}">{{ site.data.navigation.cta.title }}</a>
@@ -38,8 +38,19 @@
 
     <div class="site-footer__civic">
       <p class="site-footer__eyebrow">Institucional</p>
-      <div class="site-footer__placeholder" aria-label="Espacio reservado para el logo del Ayuntamiento de Madrid">
-        <span>Logo del Ayuntamiento de Madrid</span>
+      <div class="site-footer__civic-logos" aria-label="Logos institucionales">
+        <img
+          class="site-footer__logo site-footer__logo--madrid"
+          src="{{ '/static/images/logo-ayuntamiento-madrid.jpg' | relative_url }}"
+          alt="Logotipo del Ayuntamiento de Madrid"
+          loading="lazy"
+        />
+        <img
+          class="site-footer__logo site-footer__logo--adi"
+          src="{{ '/static/images/LOGO_ADI-p-500.png' | relative_url }}"
+          alt="Logotipo de la ADI"
+          loading="lazy"
+        />
       </div>
     </div>
   </div>
