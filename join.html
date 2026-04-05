@@ -1,9 +1,9 @@
 ---
 layout: default
 immersive_hero: true
-title: "&iquest;Listo para unirte?"
+title: "&iquest;Listo para lanzarte?"
 description: "Unete a Halegatos Madrid: deporte, ocio y actividades sociales en una comunidad abierta, diversa y sin etiquetas."
-keywords: inscripcion halegatos madrid, saltos madrid, halefederado, club deportivo lgtbi madrid
+keywords: inscripcion natacion madrid, apuntarse club natacion madrid, inscripcion aguas abiertas madrid, inscripcion saltos madrid, halegatos inscripcion
 ---
 {% assign join = site.data.join %}
 
@@ -41,27 +41,16 @@ keywords: inscripcion halegatos madrid, saltos madrid, halefederado, club deport
         <article class="join-step">
           <span class="join-step__number">{{ forloop.index }}</span>
           <div class="join-step__content">
-            <h3>{{ step.title }}</h3>
-            <p>{{ step.text }}</p>
+            {% if step.title %}
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.text }}</p>
+            {% else %}
+              <p>{{ step }}</p>
+            {% endif %}
           </div>
         </article>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <article class="notice-card join-help">
-      <div>
-        <p class="eyebrow">Ayuda</p>
-        <h2>{{ join.help.title }}</h2>
-        <p>{{ join.help.text }}</p>
-      </div>
-      <div class="join-help__action">
-        <a class="button" href="mailto:{{ join.help.email }}">{{ join.help.email }}</a>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -75,10 +64,26 @@ keywords: inscripcion halegatos madrid, saltos madrid, halefederado, club deport
           <p>{{ item.description }}</p>
         </div>
 
+        {% if item.featured_note %}
+          <div class="join-card__feature join-card__feature--{{ item.featured_note.accent | default: item.accent }}">
+            <p class="join-card__feature-label">{{ item.featured_note.label }}</p>
+            <h3>{{ item.featured_note.title }}</h3>
+            <p>{{ item.featured_note.text }}</p>
+          </div>
+        {% endif %}
+
+        {% if item.highlights %}
+          <ul class="pill-list">
+            {% for highlight in item.highlights %}
+              <li class="pill">{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
         {% if item.contacts %}
           <div class="join-card__info">
             {% for contact in item.contacts %}
-              <div class="join-card__block">
+              <div class="join-card__block{% if forloop.first and item.accent == 'orange' %} join-card__block--notice{% endif %}">
                 <h3>{{ contact.title }}</h3>
                 <p>{{ contact.text }}</p>
                 <a class="join-card__mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
@@ -87,17 +92,19 @@ keywords: inscripcion halegatos madrid, saltos madrid, halefederado, club deport
           </div>
         {% endif %}
 
-        <div class="join-card__actions">
-          {% for action in item.actions %}
-            <a
-              class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}"
-              href="{{ action.url }}"
-              {% if action.url contains '://' %}target="_blank" rel="noopener noreferrer"{% endif %}
-            >
-              {{ action.label }}
-            </a>
-          {% endfor %}
-        </div>
+        {% if item.actions %}
+          <div class="join-card__actions">
+            {% for action in item.actions %}
+              <a
+                class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}"
+                href="{{ action.url }}"
+                {% if action.url contains '://' %}target="_blank" rel="noopener noreferrer"{% endif %}
+              >
+                {{ action.label }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
