@@ -2707,6 +2707,15 @@ button {
   color: var(--color-cyan);
 }
 
+.site-footer p,
+.site-footer li {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.site-footer__brand p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
 .site-footer__cta {
   width: fit-content;
   margin-top: 0.5rem;
@@ -3139,9 +3148,10 @@ button {
     top: calc(var(--header-offset) + 2rem);
   }
 
-  .home-hero__title {
-    max-width: 8ch;
-    font-size: clamp(2.18rem, 9.3vw, 3.55rem);
+  .home-hero h1.home-hero__title {
+    max-width: min(100%, 13ch);
+    font-size: clamp(2rem, 8.4vw, 3.15rem);
+    line-height: 1.18;
   }
 
   .home-hero__lead,
