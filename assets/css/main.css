@@ -1686,6 +1686,13 @@ button {
   font-weight: 700;
 }
 
+.partner-card__logo img {
+  display: block;
+  width: min(100%, 220px);
+  max-height: 86px;
+  object-fit: contain;
+}
+
 .partner-card h3 {
   margin: 0;
   font-size: 1.16rem;

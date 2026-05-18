@@ -91,18 +91,26 @@ keywords: alianza deportiva madrid, colaboraciones deportivas madrid, patrocinad
             {% if item.url and item.url != "" %}
               <a class="partner-card" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
                 <div class="partner-card__logo">
-                  <span>Logo</span>
+                  {% if item.image %}
+                    <img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: item.name }}" loading="lazy" />
+                  {% else %}
+                    <span>{{ item.placeholder | default: "Logo" }}</span>
+                  {% endif %}
                 </div>
                 <h3>{{ item.name }}</h3>
-                <span class="partner-card__meta">Visitar web</span>
+                <span class="partner-card__meta">{{ item.meta | default: "Visitar web" }}</span>
               </a>
             {% else %}
-              <article class="partner-card partner-card--pending">
+              <article class="partner-card{% if item.pending %} partner-card--pending{% endif %}">
                 <div class="partner-card__logo">
-                  <span>Logo</span>
+                  {% if item.image %}
+                    <img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: item.name }}" loading="lazy" />
+                  {% else %}
+                    <span>{{ item.placeholder | default: "Logo" }}</span>
+                  {% endif %}
                 </div>
                 <h3>{{ item.name }}</h3>
-                <span class="partner-card__meta">Espacio listo para enlace</span>
+                <span class="partner-card__meta">{{ item.meta | default: "Patrocinador confirmado" }}</span>
               </article>
             {% endif %}
           {% endfor %}

@@ -31,29 +31,56 @@ groups:
   - title: Patrocinadores
     description: Marcas y entidades con una vinculación estable al proyecto y presencia destacada junto al club.
     items:
-      - name: Nombre patrocinador
+      - name: Anteriad
+        image: /static/images/patrocinador-principal.png
+        alt: Logotipo de Anteriad
+        meta: Patrocinador oficial
         url: ""
-      - name: Nombre patrocinador
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
-      - name: Nombre patrocinador
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
   - title: Colaboradores
     description: Proyectos y organizaciones que se suman a acciones puntuales, iniciativas compartidas o apoyos concretos.
     items:
-      - name: Nombre colaborador
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
-      - name: Nombre colaborador
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
-      - name: Nombre colaborador
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
   - title: Patrocinadores de eventos
     description: Apoyos asociados a actividades concretas del club, celebraciones, torneos, encuentros o acciones especiales.
     items:
-      - name: Nombre evento
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
-      - name: Nombre evento
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
-      - name: Nombre evento
+      - name: Aún no contamos con más patrocinadores de momento
+        placeholder: Próximamente
+        pending: true
+        meta: Espacio preparado
         url: ""
 
 cta:
