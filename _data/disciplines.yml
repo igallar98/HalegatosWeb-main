@@ -1,7 +1,7 @@
 hero:
   eyebrow: Disciplinas
   title: Tres maneras de vivir el agua.
-  lead: Natacion, aguas abiertas y saltos con identidad propia, entrenamientos adaptados y una forma muy Halegatos de vivir el equipo.
+  lead: Natación, aguas abiertas y saltos con identidad propia, entrenamientos adaptados y una forma muy Halegatos de vivir el equipo.
   suggestion:
     eyebrow: Nuevas ideas para el club
     title: "Ay&uacute;danos a decidir qu&eacute; viene despu&eacute;s."
@@ -9,7 +9,7 @@ hero:
     button_label: "&iexcl;Prop&oacute;n o vota una nueva disciplina!"
     button_url: https://halegatos.fider.io/
   image: /static/images/CABECERA-09.png
-  alt: Grupo de deportistas de Halegatos en una sesion de entrenamiento.
+  alt: Grupo de deportistas de Halegatos en una sesión de entrenamiento.
 
 swim_levels: &swim_levels
   - Caballito de mar
@@ -27,10 +27,10 @@ swim_locations: &swim_locations
 
 swim_calendar:
   eyebrow: Calendario de competiciones
-  title: Temporada 2025-26 de Natacion Master
+  title: Temporada 2025-26 de Natación Máster
   description: Un calendario visual para seguir la temporada, localizar la siguiente cita importante y consultar de un vistazo las pruebas ya disputadas.
   note: Consulta la siguiente cita y el estado de cada prueba de la temporada.
-  upcoming_label: Proxima cita
+  upcoming_label: Próxima cita
   current_label: En curso ahora
   finished_label: Temporada completada
   finished_text: Ya se han disputado todas las competiciones de esta temporada.
@@ -39,7 +39,7 @@ swim_calendar:
       date_label: 20-21 dic
       start: 2025-12-20
       end: 2025-12-21
-      title: XV Festival de Estilos Master
+      title: XV Festival de Estilos Máster
       place: Madrid
       tag: Festival
       tone: regional
@@ -63,7 +63,7 @@ swim_calendar:
       date_label: 14-15 feb
       start: 2026-02-14
       end: 2026-02-15
-      title: 1&ordf; Jornada Liga Madrid Master
+      title: 1&ordf; Jornada Liga Madrid Máster
       place: Madrid
       tag: Liga Madrid
       tone: league
@@ -79,7 +79,7 @@ swim_calendar:
       date_label: 28-29 mar
       start: 2026-03-28
       end: 2026-03-29
-      title: 2&ordf; Jornada Liga Madrid Master
+      title: 2&ordf; Jornada Liga Madrid Máster
       place: Madrid
       tag: Liga Madrid
       tone: league
@@ -87,7 +87,7 @@ swim_calendar:
       date_label: 18-19 abr
       start: 2026-04-18
       end: 2026-04-19
-      title: 3&ordf; Jornada Liga Madrid Master
+      title: 3&ordf; Jornada Liga Madrid Máster
       place: Madrid
       tag: Liga Madrid
       tone: league
@@ -103,7 +103,7 @@ swim_calendar:
       date_label: 9-10 may
       start: 2026-05-09
       end: 2026-05-10
-      title: 4&ordf; Jornada Liga Madrid Master
+      title: 4&ordf; Jornada Liga Madrid Máster
       place: Madrid
       tag: Liga Madrid
       tone: league
@@ -125,51 +125,51 @@ swim_calendar:
       tone: national
 
 items:
-  - title: Natacion
-    eyebrow: Tecnica, constancia y competicion
+  - title: Natación
+    eyebrow: Técnica, constancia y competición
     image: /static/images/disciplinasnatacion.png
     alt: Nadadores entrenando en piscina.
-    description: Entrenamientos por niveles para mejorar tecnica, resistencia y ritmo de competicion sin perder el lado humano del club.
+    description: Entrenamientos por niveles para mejorar técnica, resistencia y ritmo de competición sin perder el lado humano del club.
     levels_title: Niveles
     levels: *swim_levels
     features:
       - Grupos adaptados por ritmo
-      - Seguimiento tecnico
-      - Preparacion para campeonatos
+      - Seguimiento técnico
+      - Preparación para campeonatos
     locations_title: Donde entrenamos
     locations: *swim_locations
     actions:
-      - label: Inscribete
+      - label: Inscríbete
         url: /join/
         style: primary
       - label: Calendario de competiciones
         url: /natacion-calendario/
         style: secondary
   - title: Aguas abiertas
-    eyebrow: Fondo, orientacion y comunidad
+    eyebrow: Fondo, orientación y comunidad
     image: /static/images/disciplinas aguasabiertas.png
     alt: Grupo durante una actividad de aguas abiertas.
-    description: Salidas, travesias y preparacion especifica para disfrutar del mar y los pantanos con seguridad, progresion y apoyo del equipo.
+    description: Salidas, travesías y preparación específica para disfrutar del mar y los pantanos con seguridad, progresión y apoyo del equipo.
     features:
-      - Sesiones de orientacion
-      - Planificacion estacional
-      - Travesias y eventos del club
+      - Sesiones de orientación
+      - Planificación estacional
+      - Travesías y eventos del club
     locations_title: Donde entrenamos
     locations: *swim_locations
     actions:
-      - label: Inscribete
+      - label: Inscríbete
         url: /join/
         style: primary
-      - label: Programa de guias
+      - label: Programa de guías
         url: /guias-aguas-abiertas/
         style: secondary
   - title: Saltos
-    eyebrow: Tecnica, confianza y expresion corporal
+    eyebrow: Técnica, confianza y expresión corporal
     image: /static/images/disciplinassaltos.png
-    alt: Deportista durante una sesion de saltos.
-    description: Un entorno seguro para aprender desde la base, ganar confianza y pulir la tecnica con progresiones adaptadas a cada persona.
+    alt: Deportista durante una sesión de saltos.
+    description: Un entorno seguro para aprender desde la base, ganar confianza y pulir la técnica con progresiones adaptadas a cada persona.
     features:
-      - Trabajo tecnico progresivo
+      - Trabajo técnico progresivo
       - Perfeccionamiento de entradas
       - Sesiones para distintos niveles
     locations_title: Donde entrenamos
@@ -178,6 +178,6 @@ items:
         address: Calle de Jos&eacute; Mart&iacute;nez de Velasco 3, 28007 Madrid
         url: https://www.google.com/maps/search/?api=1&query=Centro+Deportivo+M86+Calle+de+Jose+Martinez+de+Velasco+3+28007+Madrid
     actions:
-      - label: Inscribete
+      - label: Inscríbete
         url: /join/
         style: primary

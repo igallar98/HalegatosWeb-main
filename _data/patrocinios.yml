@@ -1,35 +1,35 @@
 hero:
   eyebrow: Alianzas
   title: Remamos juntos
-  lead: Colaboraciones que conectan deporte, inclusion, visibilidad y comunidad en un proyecto con identidad propia.
+  lead: Colaboraciones que conectan deporte, inclusión, visibilidad y comunidad en un proyecto con identidad propia.
   image: /static/images/CABECERA-08.png
-  alt: Imagen de ambiente deportivo para la seccion de alianzas.
+  alt: Imagen de ambiente deportivo para la sección de alianzas.
   chips:
     - Patrocinadores
     - Colaboradores
     - Patrocinadores de eventos
 
 intro:
-  eyebrow: Por que colaborar
+  eyebrow: Por qué colaborar
   title: Un club con presencia, valores claros y una comunidad muy viva.
-  text: Halegatos ofrece una plataforma honesta para colaborar con un proyecto que une deporte, inclusion y visibilidad. Nos interesa construir relaciones utiles para ambas partes, con sentido y continuidad.
+  text: Halegatos ofrece una plataforma honesta para colaborar con un proyecto que une deporte, inclusión y visibilidad. Nos interesa construir relaciones útiles para ambas partes, con sentido y continuidad.
   points:
     - Visibilidad vinculada a deporte inclusivo y comunidad activa.
     - Acciones conjuntas en eventos, equipaciones o actividades del club.
-    - Colaboraciones adaptadas al tipo de marca o institucion.
+    - Colaboraciones adaptadas al tipo de marca o institución.
 
 scholarships:
-  eyebrow: Becas e integracion
-  title: El deporte tambien puede ser una puerta de entrada
-  text: Halegatos trabaja con ONGs y entidades sociales para facilitar, cuando es posible, el acceso al club de personas refugiadas o solicitantes de asilo. Buscamos que el deporte tambien sea un espacio de acompanamiento, pertenencia e integracion.
+  eyebrow: Becas e integración
+  title: El deporte también puede ser una puerta de entrada
+  text: Halegatos trabaja con ONGs y entidades sociales para facilitar, cuando es posible, el acceso al club de personas refugiadas o solicitantes de asilo. Buscamos que el deporte también sea un espacio de acompañamiento, pertenencia e integración.
   points:
     - Colaboraciones con impacto social real dentro y fuera del agua.
-    - Itinerarios de acompanamiento adaptados a cada situacion.
-    - Una forma concreta de apoyar inclusion, salud y comunidad.
+    - Itinerarios de acompañamiento adaptados a cada situación.
+    - Una forma concreta de apoyar inclusión, salud y comunidad.
 
 groups:
   - title: Patrocinadores
-    description: Marcas y entidades con una vinculacion estable al proyecto y presencia destacada junto al club.
+    description: Marcas y entidades con una vinculación estable al proyecto y presencia destacada junto al club.
     items:
       - name: Nombre patrocinador
         url: ""
@@ -57,7 +57,7 @@ groups:
         url: ""
 
 cta:
-  title: Hablemos de colaboracion
-  text: Si quieres apoyar el proyecto o plantear una alianza, escribenos y vemos como construir una propuesta util para ambas partes.
+  title: Hablemos de colaboración
+  text: Si quieres apoyar el proyecto o plantear una alianza, escríbenos y vemos cómo construir una propuesta útil para ambas partes.
   label: Contactar para alianzas
   url: mailto:info@halegatos.com

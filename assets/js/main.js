@@ -225,14 +225,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (currentEvent) {
         spotlightLabel.textContent = "En curso ahora";
-        spotlightTitle.textContent = currentEvent.title ? currentEvent.title.textContent : "Competicion en curso";
+        spotlightTitle.textContent = currentEvent.title ? currentEvent.title.textContent : "Competición en curso";
         spotlightDate.textContent = formatRange(currentEvent.start, currentEvent.endExclusive) + (currentEvent.place ? " · " + currentEvent.place.textContent : "");
         return;
       }
 
       if (nextEvent) {
-        spotlightLabel.textContent = "Proxima cita";
-        spotlightTitle.textContent = nextEvent.title ? nextEvent.title.textContent : "Proxima competicion";
+        spotlightLabel.textContent = "Próxima cita";
+        spotlightTitle.textContent = nextEvent.title ? nextEvent.title.textContent : "Próxima competición";
         spotlightDate.textContent = formatRange(nextEvent.start, nextEvent.endExclusive) + (nextEvent.place ? " · " + nextEvent.place.textContent : "");
         return;
       }

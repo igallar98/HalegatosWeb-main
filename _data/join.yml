@@ -1,35 +1,35 @@
 hero:
   eyebrow: Inscripciones
   title_html: "&iquest;Listo para lanzarte?"
-  lead: Elige tu modalidad y te contamos el siguiente paso de forma clara y rapida.
+  lead: Elige tu modalidad y te contamos el siguiente paso de forma clara y rápida.
   image: /static/images/CABECERA-03.jpg
-  alt: Deportistas de Halegatos durante una sesion en piscina.
+  alt: Deportistas de Halegatos durante una sesión en piscina.
   chips:
     - Proceso simple
     - Respuesta por correo
     - Entrenamiento de prueba
 
 intro:
-  eyebrow: Como apuntarte
+  eyebrow: Cómo apuntarte
   title: Tres pasos y listo.
   text: Queremos que entiendas el proceso en menos de un minuto.
   steps:
     - title: Elige modalidad
-      text: Natacion, aguas abiertas, saltos o HaleFederado.
-    - title: Escribenos si tienes dudas
-      text: Te orientamos segun tu nivel, edad o disponibilidad.
+      text: Natación, aguas abiertas, saltos o HaleFederado.
+    - title: Escríbenos si tienes dudas
+      text: Te orientamos según tu nivel, edad o disponibilidad.
     - title: Confirma el alta
-      text: Te indicamos por correo como terminar la inscripcion.
+      text: Te indicamos por correo cómo terminar la inscripción.
 
 disciplines:
-  - eyebrow: Natacion
-    title: Natacion y aguas abiertas
-    description: Si te interesa esta modalidad, escribenos y te orientamos o reserva un entrenamiento de prueba.
+  - eyebrow: Natación
+    title: Natación y aguas abiertas
+    description: Si te interesa esta modalidad, escríbenos y te orientamos o reserva un entrenamiento de prueba.
     accent: blue
     highlights:
-      - Natacion y aguas abiertas
+      - Natación y aguas abiertas
       - Entrenamiento de prueba
-      - Orientacion por correo
+      - Orientación por correo
     contacts:
       - title: Contacto
         text: Te ayudamos a encontrar el grupo que mejor encaja contigo.
@@ -44,32 +44,32 @@ disciplines:
     accent: orange
     highlights:
       - Contacto previo recomendado
-      - Seccion especifica de saltos
+      - Sección específica de saltos
       - Proceso guiado
     contacts:
       - title: Contacto
-        text: Te contamos plazas, edades y como funciona la seccion.
+        text: Te contamos plazas, edades y cómo funciona la sección.
         email: saltos@halegatos.com
     actions:
       - label: Contactar con saltos
         url: mailto:saltos@halegatos.com
         style: primary
-      - label: Formulario de inscripcion
+      - label: Formulario de inscripción
         url: https://docs.google.com/forms/d/e/1FAIpQLSeCQLCKGxlPrOvjjY70FHBZo6oRv0J5QLpd3DNY8PnIxXWWGg/viewform
         style: secondary
   - eyebrow: HaleFederado
-    title: Entrena con Halegatos estes donde estes
-    description: La opcion para seguir en el club si no entrenas presencialmente con nosotrxs.
+    title: Entrena con Halegatos estés donde estés
+    description: La opción para seguir en el club si no entrenas presencialmente con nosotrxs.
     accent: blue
     highlights:
-      - Federacion con Halegatos
+      - Federación con Halegatos
       - Entrenamientos online por correo
       - Ideal si vives fuera o viajas
     contacts:
       - title: Contacto
-        text: Te explicamos como funciona y como darte de alta.
+        text: Te explicamos cómo funciona y cómo darte de alta.
         email: halegatos@halegatos.com
     actions:
-      - label: Quiero informacion
+      - label: Quiero información
         url: mailto:halegatos@halegatos.com
         style: primary

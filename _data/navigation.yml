@@ -10,7 +10,7 @@ main:
   - title: "Tienda"
     url: https://halegatos.playoffinformatica.com/Botiga.php
 ctas:
-  - title: "Inscribete"
+  - title: "Inscríbete"
     url: /join/
     style: primary
   - title: "Acceso socios"

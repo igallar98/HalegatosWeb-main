@@ -3,12 +3,12 @@
   <div class="site-header__shell">
     <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio de Club Halegatos">
       <span class="site-logo site-logo--header" aria-hidden="true">
-        <img src="{{ '/static/images/logo-25a%C3%B1os.png' | relative_url }}" alt="Logotipo 25 anos del Club Halegatos" />
+        <img src="{{ '/static/images/logo-25a%C3%B1os.png' | relative_url }}" alt="Logotipo 25 años del Club Halegatos" />
       </span>
       <span class="visually-hidden">Club Halegatos</span>
     </a>
 
-    <nav class="site-nav" aria-label="Navegacion principal">
+    <nav class="site-nav" aria-label="Navegación principal">
       {% for item in site.data.navigation.main %}
         {% if item.url contains '://' %}
           <a class="site-nav__link" href="{{ item.url }}">
@@ -47,15 +47,15 @@
       data-menu-toggle
       aria-expanded="false"
       aria-controls="mobile-menu"
-      aria-label="Abrir menu"
+      aria-label="Abrir menú"
     >
-      <span class="visually-hidden">Abrir menu</span>
+      <span class="visually-hidden">Abrir menú</span>
       <i data-lucide="menu"></i>
     </button>
   </div>
 
   <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
-    <nav class="mobile-menu__nav" aria-label="Navegacion movil">
+    <nav class="mobile-menu__nav" aria-label="Navegación móvil">
       {% for item in site.data.navigation.main %}
         {% if item.url contains '://' %}
           <a class="mobile-menu__link" href="{{ item.url }}">
