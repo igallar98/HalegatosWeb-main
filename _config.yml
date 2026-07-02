@@ -3,8 +3,8 @@ name: Club Halegatos
 description: Club de natación máster en Madrid con aguas abiertas, saltos, deporte inclusivo y vida social.
 keywords: club de natación madrid, natación máster madrid, aguas abiertas madrid, saltos madrid, club deportivo inclusivo madrid, halegatos
 lang: es
-url: ""
-baseurl: "/HalegatosWeb-main"
+url: "https://halegatos.com"
+baseurl: ""
 permalink: pretty
 exclude:
   - _site
