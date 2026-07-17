@@ -56,7 +56,7 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       position: relative;
       z-index: 2;
       padding: calc(var(--header-offset) + 2rem) 1rem 4rem;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
     }
 
@@ -84,6 +84,21 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       color: rgba(255, 255, 255, 0.9);
       margin: 0 auto 2rem;
       max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
     }
 
     /* General button styling - Full width on mobile */
@@ -132,6 +147,18 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     .btn-secondary:hover {
       background: rgba(0, 132, 183, 0.15);
       border-color: rgba(0, 132, 183, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.5);
       transform: translateY(-2px);
     }
 
@@ -345,83 +372,6 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       margin-top: -0.1rem;
     }
 
-    /* Pricing Section */
-    .price-box {
-      max-width: 420px;
-      margin: 3rem auto 0;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: 3rem 2.5rem;
-      box-shadow: var(--shadow-card);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.25s ease;
-      box-sizing: border-box;
-    }
-
-    .price-box:hover {
-      transform: translateY(-4px);
-    }
-
-    .price-value-container {
-      margin-bottom: 2rem;
-    }
-
-    .price-value {
-      font-size: clamp(3rem, 6vw, 4rem);
-      font-weight: 800;
-      color: var(--color-text);
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .price-value small {
-      font-size: 1.25rem;
-      color: var(--color-text-soft);
-      font-weight: 700;
-    }
-
-    .price-period {
-      font-size: 1rem;
-      color: var(--color-text-soft);
-      font-weight: 700;
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    .price-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2.5rem;
-      width: 100%;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .price-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--color-text);
-      line-height: 1.4;
-    }
-
-    .price-list li span {
-      color: var(--color-success);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
     /* Contact Form Section */
     .join-contact-v3 {
       max-width: 720px;
@@ -450,11 +400,12 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     .join-contact-v3 p.contact-lead {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.6;
-      color: var(--color-text-soft);
-      margin: 0 0 3rem;
+      color: var(--color-text);
+      margin: 0 0 2rem;
       text-align: center;
+      font-weight: 700;
     }
 
     .contact-options {
@@ -475,7 +426,7 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       font-size: 0.95rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
       transition: all 0.2s ease;
       cursor: default;
     }
@@ -490,11 +441,11 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     .contact-disclaimer {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--color-text-soft);
       text-align: center;
       margin-bottom: 2.5rem;
-      font-style: italic;
+      line-height: 1.5;
     }
 
     .join-contact-v3 .btn-huge {
@@ -610,8 +561,12 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     <div class="join-hero-v3__content container">
       <span class="join-hero-v3__eyebrow">¿Listo para lanzarte?</span>
       <h1 class="join-hero-v3__title">Mucho más que un club de natación.</h1>
-      <p class="join-hero-v3__lead">Tanto si tienes experiencia como si quieres volver a practicar deporte, estaremos encantados de conocerte. Únete al club LGTBIQ+ más grande de España.</p>
-      <a href="#contacto" class="btn-primary" style="display:inline-flex;width:auto;padding:1rem 2.5rem;font-size:1.1rem;">Escríbenos</a>
+      <p class="join-hero-v3__lead">Tanto si tienes experiencia como si quieres volver a practicar deporte, estaremos encantados de conocerte.</p>
+      
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary" style="display:inline-flex; width:auto; padding:1rem 2.5rem; font-size:1.1rem;">Escríbenos</a>
+        <a href="#contacto" class="btn-hero-secondary" style="display:inline-flex; width:auto; padding:1rem 2.5rem; font-size:1.1rem;">Me interesan los eventos sociales</a>
+      </div>
     </div>
   </section>
 
@@ -725,34 +680,8 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     </div>
   </section>
 
-  <!-- Section 5: Cuotas -->
+  <!-- Section 5: Preguntas frecuentes -->
   <section class="section section--alt">
-    <div class="container">
-      <div class="section-heading section-heading--center">
-        <h2>¿Cuánto cuesta?</h2>
-        <p>Una cuota simplificada y transparente.</p>
-      </div>
-
-      <div class="price-box">
-        <div class="price-value-container">
-          <span class="price-value"><small>Desde</small> 12 €</span>
-          <span class="price-period">al mes</span>
-        </div>
-        
-        <ul class="price-list">
-          <li><span>✔</span> Entrenamientos del deporte elegido</li>
-          <li><span>✔</span> Acceso a la comunidad Halegatos</li>
-          <li><span>✔</span> Participación en todas las actividades de HaleOcio</li>
-          <li><span>✔</span> Seguro y gestión de licencia federativa (si aplica)</li>
-        </ul>
-
-        <a href="#contacto" class="btn-primary">Consultar todas las opciones</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 6: Preguntas frecuentes -->
-  <section class="section">
     <div class="container">
       <div class="section-heading section-heading--center">
         <h2>Preguntas frecuentes</h2>
@@ -811,12 +740,12 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     </div>
   </section>
 
-  <!-- Section 7: Contact Section -->
-  <section id="contacto" class="section section--alt">
+  <!-- Section 6: Contact Section -->
+  <section id="contacto" class="section">
     <div class="container">
       <div class="join-contact-v3">
         <h2>Cuéntanos qué buscas</h2>
-        <p class="contact-lead">Selecciona el deporte que más te interesa y te ayudaremos a encontrar el grupo que mejor encaja contigo.</p>
+        <p class="contact-lead">Para informarte o inscribirte en cualquiera de nuestras actividades, escríbenos directamente un correo electrónico a <strong>inscripciones@halegatos.com</strong>.</p>
         
         <div class="contact-options">
           <div class="contact-chip"><span>🏊</span> Natación</div>
@@ -826,18 +755,18 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
           <div class="contact-chip"><span>🎉</span> HaleOcio</div>
         </div>
 
-        <p class="contact-disclaimer">Si no sabes qué modalidad elegir, no pasa nada. Te asesoraremos personalmente al recibir tu correo.</p>
+        <p class="contact-disclaimer">Puedes usar el botón de abajo para redactar tu mensaje automáticamente. Si no tienes clara la modalidad o tus objetivos, no te preocupes: te asesoraremos personalmente para encontrar tu sitio en el club.</p>
         
         <a 
-          href="mailto:halegatos@halegatos.com?subject=Quiero unirme a Halegatos&body=¡Hola! Me gustaría contactar con Halegatos para obtener más información.%0D%0A%0D%0AMis intereses:%0D%0A-%20Deporte%20principal:%20%0D%0A-%20Dónde%20vivo:%20%0D%0A-%20Mi%20nivel%20o%20experiencia:%20%0D%0A%0D%0A¡Muchas gracias!" 
+          href="mailto:inscripciones@halegatos.com?subject=Quiero unirme a Halegatos&body=¡Hola! Me gustaría contactar con Halegatos para obtener más información o inscribirme.%0D%0A%0D%0AMis intereses:%0D%0A-%20Deporte%20o%20actividad%20principal:%20%0D%0A-%20Dónde%20vivo:%20%0D%0A-%20Mi%20nivel%20o%20experiencia:%20%0D%0A%0D%0A¡Muchas gracias!" 
           class="btn-huge"
         >
-          Escríbenos ahora
+          Escríbenos a inscripciones@halegatos.com
         </a>
 
         <div class="join-contact-v3__details">
-          <a href="mailto:halegatos@halegatos.com">
-            <i data-lucide="mail"></i> halegatos@halegatos.com
+          <a href="mailto:inscripciones@halegatos.com">
+            <i data-lucide="mail"></i> inscripciones@halegatos.com
           </a>
           <a href="https://www.instagram.com/halegatosclub/" target="_blank" rel="noopener noreferrer">
             <i data-lucide="instagram"></i> Instagram
