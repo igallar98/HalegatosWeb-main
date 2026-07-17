@@ -6,10 +6,10 @@ description: "Únete a Halegatos Madrid: deporte, ocio, natación y actividades 
 keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club deportivo lgtb madrid, club gay madrid, halegatos inscripcion, deporte inclusivo madrid
 ---
 
-<div class="join-page-v2">
+<div class="join-page-v3">
   <!-- Styles are inline to prevent polluting other pages and to ensure page-specific styling -->
   <style>
-    .join-page-v2 {
+    .join-page-v3 {
       --color-success: #10b981;
       --color-success-hover: #059669;
       --color-success-bg: rgba(16, 185, 129, 0.1);
@@ -18,23 +18,24 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     /* Hero Section */
-    .join-hero-v2 {
+    .join-hero-v3 {
       position: relative;
-      min-height: 75svh;
+      min-height: 80svh;
       display: flex;
       align-items: center;
       color: #ffffff;
       overflow: hidden;
       background: var(--color-dark);
+      text-align: center;
     }
 
-    .join-hero-v2__bg {
+    .join-hero-v3__bg {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
 
-    .join-hero-v2__bg img {
+    .join-hero-v3__bg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -42,46 +43,47 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       opacity: 0.65;
     }
 
-    .join-hero-v2__bg::after {
+    .join-hero-v3__bg::after {
       content: "";
       position: absolute;
       inset: 0;
       background: 
-        linear-gradient(180deg, rgba(7, 38, 59, 0.3) 0%, rgba(7, 38, 59, 0.8) 80%, var(--color-bg) 100%),
+        linear-gradient(180deg, rgba(7, 38, 59, 0.3) 0%, rgba(7, 38, 59, 0.85) 80%, var(--color-bg) 100%),
         linear-gradient(90deg, rgba(7, 38, 59, 0.6) 0%, rgba(7, 38, 59, 0.3) 50%, rgba(7, 38, 59, 0.6) 100%);
     }
 
-    .join-hero-v2__content {
+    .join-hero-v3__content {
       position: relative;
       z-index: 2;
       padding: calc(var(--header-offset) + 2rem) 1rem 4rem;
       max-width: 800px;
+      margin: 0 auto;
     }
 
-    .join-hero-v2__eyebrow {
-      font-size: 0.9rem;
+    .join-hero-v3__eyebrow {
+      font-size: 1rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--color-cyan);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       display: inline-block;
     }
 
-    .join-hero-v2__title {
-      font-size: clamp(2.5rem, 6vw, 4.2rem);
-      line-height: 1.1;
+    .join-hero-v3__title {
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      line-height: 1.05;
       font-weight: 800;
       letter-spacing: -0.04em;
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem;
     }
 
-    .join-hero-v2__lead {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    .join-hero-v3__lead {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
       line-height: 1.5;
       color: rgba(255, 255, 255, 0.9);
-      margin: 0;
-      max-width: 620px;
+      margin: 0 auto 2rem;
+      max-width: 650px;
     }
 
     /* General button styling - Full width on mobile */
@@ -99,6 +101,7 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       cursor: pointer;
       width: 100%;
       box-sizing: border-box;
+      text-decoration: none;
     }
 
     @media (min-width: 768px) {
@@ -132,85 +135,11 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       transform: translateY(-2px);
     }
 
-    /* Touch Cards Section (¿Qué te interesa?) */
-    .join-interests-section {
-      margin-top: -3rem;
-      position: relative;
-      z-index: 10;
-      padding-top: 0;
-    }
-
-    .interests-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--color-text-soft);
-      margin: 0 0 1.5rem;
-    }
-
-    .interests-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .interests-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .interest-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .interest-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 25px 50px rgba(7, 38, 59, 0.15);
-    }
-
-    .interest-card__icon {
-      font-size: 3rem;
-      margin-bottom: 1.25rem;
-      line-height: 1;
-    }
-
-    .interest-card h3 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      margin: 0 0 0.75rem;
-      color: var(--color-text);
-      line-height: 1.2;
-    }
-
-    .interest-card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--color-text-soft);
-      margin: 0 0 2rem;
-      flex-grow: 1;
-    }
-
-    .interest-card .btn-primary,
-    .interest-card .btn-secondary {
-      width: 100%;
-    }
-
     /* Steps Section */
     .steps-flow {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.25rem;
       margin-top: 3rem;
     }
 
@@ -219,7 +148,7 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
         flex-direction: row;
         align-items: stretch;
         justify-content: space-between;
-        gap: 0.75rem;
+        gap: 1rem;
       }
     }
 
@@ -244,8 +173,8 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     .step-card__icon {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 4rem;
+      height: 4rem;
       border-radius: var(--radius-md);
       background: rgba(0, 132, 183, 0.08);
       color: var(--color-brand);
@@ -253,25 +182,22 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       align-items: center;
       justify-content: center;
       margin-bottom: 1.25rem;
+      font-size: 1.8rem;
     }
 
-    .step-card:nth-child(even) .step-card__icon {
+    .step-card:nth-child(2) .step-card__icon {
+      background: rgba(16, 185, 129, 0.08);
+      color: var(--color-success);
+    }
+
+    .step-card:nth-child(3) .step-card__icon {
+      background: rgba(0, 132, 183, 0.08);
+      color: var(--color-cyan);
+    }
+
+    .step-card:nth-child(4) .step-card__icon {
       background: rgba(255, 107, 26, 0.08);
       color: var(--color-accent);
-    }
-
-    .step-card__icon i {
-      width: 1.6rem;
-      height: 1.6rem;
-    }
-
-    .step-card__number {
-      position: absolute;
-      top: 1rem;
-      right: 1.25rem;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: rgba(17, 35, 56, 0.08);
     }
 
     .step-card h3 {
@@ -288,28 +214,8 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       margin: 0;
     }
 
-    .steps-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-brand);
-      opacity: 0.5;
-    }
-
-    .steps-arrow i {
-      width: 2rem;
-      height: 2rem;
-    }
-
-    @media (max-width: 1023px) {
-      .steps-arrow {
-        transform: rotate(90deg);
-        margin: 0.5rem 0;
-      }
-    }
-
-    /* Info Grid Section */
-    .info-grid {
+    /* Disciplinas Section */
+    .disciplines-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -317,12 +223,12 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     @media (min-width: 768px) {
-      .info-grid {
+      .disciplines-grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    .info-card {
+    .discipline-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
@@ -333,266 +239,120 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       flex-direction: column;
       align-items: center;
       text-align: center;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .info-card:hover {
+    .discipline-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-card);
+      border-color: var(--color-brand);
     }
 
-    .info-card__icon {
-      font-size: 2.8rem;
+    .discipline-card__icon {
+      font-size: 3rem;
       margin-bottom: 1.25rem;
       line-height: 1;
     }
 
-    .info-card h3 {
+    .discipline-card h3 {
       font-size: 1.35rem;
       font-weight: 800;
       margin: 0 0 0.75rem;
       color: var(--color-text);
     }
 
-    .info-card p {
+    .discipline-card p {
       font-size: 0.98rem;
       line-height: 1.55;
       color: var(--color-text-soft);
       margin: 0;
     }
 
-    /* Online Training Section */
-    .online-box {
+    /* Social/Online Split Section */
+    .split-cards-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .split-cards-section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .split-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       padding: 3rem 2rem;
       box-shadow: var(--shadow-soft);
-      text-align: left;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    @media (min-width: 768px) {
-      .online-box {
-        padding: 4rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 2.5rem;
-        align-items: start;
-      }
+    .split-card__header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
     }
 
-    .online-box__icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+    .split-card__icon {
+      font-size: 3.5rem;
       line-height: 1;
     }
 
-    @media (min-width: 768px) {
-      .online-box__icon {
-        margin-bottom: 0;
-      }
-    }
-
-    .online-box__content h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    .split-card h2 {
+      font-size: clamp(1.6rem, 3vw, 2rem);
       line-height: 1.15;
       font-weight: 800;
-      margin: 0 0 1rem;
+      margin: 0;
       color: var(--color-text);
       letter-spacing: -0.03em;
     }
 
-    .online-box__highlight {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--color-brand);
-      margin: 0 0 1.25rem;
-    }
-
-    .online-box__content p {
-      font-size: 1rem;
+    .split-card p {
+      font-size: 1.05rem;
       line-height: 1.6;
       color: var(--color-text-soft);
       margin: 0 0 2rem;
     }
 
-    .online-box__includes {
-      margin-bottom: 2rem;
-    }
-
-    .online-box__includes h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin: 0 0 1rem;
-      color: var(--color-text);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .includes-list {
+    .split-list {
       list-style: none;
       padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: 580px) {
-      .includes-list {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .includes-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .includes-list li span {
-      font-size: 1.2rem;
-    }
-
-    /* Ocio Split Section */
-    .ocio-split-box {
-      display: grid;
-      grid-template-columns: 1fr;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-    }
-
-    @media (min-width: 1024px) {
-      .ocio-split-box {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .ocio-split-box__media {
-      min-height: 280px;
-      position: relative;
-    }
-
-    @media (min-width: 1024px) {
-      .ocio-split-box__media {
-        min-height: 100%;
-      }
-    }
-
-    .ocio-split-box__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .ocio-split-box__content {
-      padding: 2.5rem 1.8rem;
+      margin: 0 0 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 1rem;
+      flex-grow: 1;
     }
 
-    @media (min-width: 768px) {
-      .ocio-split-box__content {
-        padding: 4rem 3.5rem;
-      }
-    }
-
-    .ocio-split-box__tag {
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    .ocio-split-box h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      line-height: 1.15;
-      font-weight: 800;
-      margin: 0 0 1rem;
-      letter-spacing: -0.03em;
-      color: var(--color-text);
-    }
-
-    .ocio-split-box__highlight {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--color-brand);
-      margin: 0 0 1.25rem;
-    }
-
-    .ocio-split-box p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--color-text-soft);
-      margin: 0 0 1.5rem;
-    }
-
-    .ocio-split-box__activities {
-      margin-bottom: 1.5rem;
-    }
-
-    .ocio-split-box__activities h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin: 0 0 1rem;
-      color: var(--color-text);
-    }
-
-    .activities-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 580px) {
-      .activities-list {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .activities-list li {
+    .split-list li {
       display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.98rem;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--color-text);
+      line-height: 1.4;
     }
 
-    .activities-list li span {
+    .split-list li span {
       font-size: 1.2rem;
-    }
-
-    .ocio-split-box__footer-text {
-      font-style: italic;
-      color: var(--color-text-soft);
-      margin: 0 !important;
-      font-size: 0.95rem !important;
+      margin-top: -0.1rem;
     }
 
     /* Pricing Section */
     .price-box {
-      max-width: 480px;
+      max-width: 420px;
       margin: 3rem auto 0;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
-      padding: 3rem 2rem;
+      padding: 3rem 2.5rem;
       box-shadow: var(--shadow-card);
       text-align: center;
       display: flex;
@@ -607,20 +367,31 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     }
 
     .price-value-container {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .price-value {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-size: clamp(3rem, 6vw, 4rem);
       font-weight: 800;
-      color: var(--color-brand-strong);
+      color: var(--color-text);
       line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .price-value small {
+      font-size: 1.25rem;
+      color: var(--color-text-soft);
+      font-weight: 700;
     }
 
     .price-period {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--color-text-soft);
       font-weight: 700;
+      display: block;
       margin-top: 0.5rem;
     }
 
@@ -630,155 +401,118 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       margin: 0 0 2.5rem;
       width: 100%;
       text-align: left;
-      display: grid;
-      gap: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .price-list li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.75rem;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--color-text);
+      line-height: 1.4;
     }
 
     .price-list li span {
       color: var(--color-success);
       font-size: 1.2rem;
-    }
-
-    .price-box .btn-primary {
-      width: 100%;
-    }
-
-    /* Corporate Stripe Section (¿Preparado para conocer...?) */
-    .join-corporate-stripe {
-      background: linear-gradient(135deg, var(--color-brand-strong) 0%, var(--color-brand) 100%);
-      color: #ffffff;
-      padding: 4.5rem 1rem;
-      text-align: center;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      box-sizing: border-box;
-    }
-
-    .join-corporate-stripe__inner {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .join-corporate-stripe h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      margin: 0 0 1rem;
-      color: #ffffff;
-      letter-spacing: -0.04em;
-    }
-
-    .join-corporate-stripe p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0 0 2rem;
-    }
-
-    .join-corporate-stripe .btn-primary {
-      background: #ffffff;
-      color: var(--color-brand-strong);
-      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-    }
-
-    .join-corporate-stripe .btn-primary:hover {
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
     }
 
     /* Contact Form Section */
-    .join-contact-v2 {
-      max-width: 680px;
+    .join-contact-v3 {
+      max-width: 720px;
       margin: 0 auto;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       padding: 3rem 2rem;
       box-shadow: var(--shadow-card);
-      text-align: center;
       box-sizing: border-box;
     }
 
     @media (min-width: 768px) {
-      .join-contact-v2 {
-        padding: 4rem;
+      .join-contact-v3 {
+        padding: 4rem 3rem;
       }
     }
 
-    .join-contact-v2 h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    .join-contact-v3 h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 800;
       margin: 0 0 1rem;
       color: var(--color-text);
       letter-spacing: -0.03em;
+      text-align: center;
     }
 
-    .join-contact-v2 p {
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--color-text-soft);
-      margin: 0 0 2rem;
-    }
-
-    .join-contact-v2__list-title {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--color-text);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.25rem;
-      text-align: left;
-    }
-
-    .join-contact-v2__list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2.5rem;
-      text-align: left;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .join-contact-v2__list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-
-    .join-contact-v2__list li span {
-      font-size: 1.2rem;
-    }
-
-    .join-contact-v2__footer-text {
-      font-size: 1rem;
+    .join-contact-v3 p.contact-lead {
+      font-size: 1.1rem;
       line-height: 1.6;
       color: var(--color-text-soft);
-      margin-bottom: 2rem;
-      text-align: left;
+      margin: 0 0 3rem;
+      text-align: center;
     }
 
-    .join-contact-v2 .btn-primary {
+    .contact-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .contact-chip {
+      background: rgba(0, 132, 183, 0.05);
+      border: 1px solid rgba(0, 132, 183, 0.2);
+      color: var(--color-text);
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+
+    .contact-chip:hover {
+      background: rgba(0, 132, 183, 0.1);
+      border-color: var(--color-brand);
+    }
+
+    .contact-chip span {
+      font-size: 1.1rem;
+    }
+
+    .contact-disclaimer {
+      font-size: 0.95rem;
+      color: var(--color-text-soft);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .join-contact-v3 .btn-huge {
+      background: var(--color-green-gradient);
+      color: #ffffff;
+      font-size: 1.15rem;
+      padding: 1.2rem 2.5rem;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+      border: none;
       width: 100%;
     }
 
-    .join-contact-v2__details {
+    .join-contact-v3 .btn-huge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.45);
+    }
+
+    .join-contact-v3__details {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -788,7 +522,7 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       padding-top: 2rem;
     }
 
-    .join-contact-v2__details a {
+    .join-contact-v3__details a {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
@@ -796,15 +530,11 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
       font-weight: 700;
       color: var(--color-brand);
       transition: color 0.2s ease;
+      text-decoration: none;
     }
 
-    .join-contact-v2__details a:hover {
+    .join-contact-v3__details a:hover {
       color: var(--color-brand-strong);
-    }
-
-    .join-contact-v2__details a i {
-      width: 1.1rem;
-      height: 1.1rem;
     }
 
     /* FAQ Accordion Section styles */
@@ -873,234 +603,158 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
   </style>
 
   <!-- Hero Section -->
-  <section class="join-hero-v2">
-    <div class="join-hero-v2__bg">
+  <section class="join-hero-v3">
+    <div class="join-hero-v3__bg">
       <img src="{{ '/static/images/CABECERA-03.jpg' | relative_url }}" alt="Entrenamiento de Halegatos en piscina" />
     </div>
-    <div class="join-hero-v2__content container">
-      <span class="join-hero-v2__eyebrow">Únete a Halegatos</span>
-      <h1 class="join-hero-v2__title">¿Quieres formar parte de Halegatos?</h1>
-      <p class="join-hero-v2__lead">Entrena, compite, viaja y forma parte de una comunidad. Conoce al equipo y prueba un entrenamiento antes de decidir.</p>
+    <div class="join-hero-v3__content container">
+      <span class="join-hero-v3__eyebrow">¿Listo para lanzarte?</span>
+      <h1 class="join-hero-v3__title">Mucho más que un club de natación.</h1>
+      <p class="join-hero-v3__lead">Tanto si tienes experiencia como si quieres volver a practicar deporte, estaremos encantados de conocerte. Únete al club LGTBIQ+ más grande de España.</p>
+      <a href="#contacto" class="btn-primary" style="display:inline-flex;width:auto;padding:1rem 2.5rem;font-size:1.1rem;">Escríbenos</a>
     </div>
   </section>
 
-  <!-- Section 1.5: ¿Qué te interesa? -->
-  <section class="section join-interests-section">
-    <div class="container">
-      <span class="interests-title">¿Qué te interesa?</span>
-      <div class="interests-grid">
-        <div class="interest-card">
-          <div class="interest-card__icon">🏊</div>
-          <h3>Entrenar en Madrid</h3>
-          <p>Natación, aguas abiertas o saltos presencial en Madrid.</p>
-          <a href="#contacto" class="btn-primary">Quiero entrenar</a>
-        </div>
-        
-        <div class="interest-card">
-          <div class="interest-card__icon">🌍</div>
-          <h3>Entrenamiento online + vida social</h3>
-          <p>Recibe tus entrenamientos y participa en HaleOcio estés donde estés.</p>
-          <a href="#online" class="btn-secondary">Quiero saber más</a>
-        </div>
-
-        <div class="interest-card">
-          <div class="interest-card__icon">🎉</div>
-          <h3>Conocer la comunidad</h3>
-          <p>Viajes, teatro, fiestas y actividades durante todo el año.</p>
-          <a href="#ocio" class="btn-secondary">Descubrir HaleOcio</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2: Así de fácil -->
+  <!-- Section 2: Cómo funciona -->
   <section class="section">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="eyebrow">Paso a paso</p>
-        <h2>Así de fácil</h2>
-        <p>No es necesario hacerse socio antes de venir. Lo primero es que vengas a entrenar, conozcas al equipo y resuelvas tus dudas.</p>
+        <h2>¿Cómo funciona?</h2>
+        <p>No es necesario hacerse socio antes de venir. Lo primero es que vengas a entrenar con nosotros, conozcas al equipo y resolvamos todas tus dudas.</p>
       </div>
 
       <div class="steps-flow">
         <div class="step-card">
-          <div class="step-card__icon">
-            <i data-lucide="mail"></i>
-          </div>
-          <span class="step-card__number">1</span>
-          <h3>Contactas</h3>
-          <p>Escríbenos contándonos un poco sobre ti.</p>
+          <div class="step-card__icon">✉️</div>
+          <h3>Escríbenos</h3>
+          <p>Mándanos un mensaje contándonos qué buscas.</p>
         </div>
         
-        <div class="steps-arrow">
-          <i data-lucide="arrow-right"></i>
+        <div class="step-card">
+          <div class="step-card__icon">💬</div>
+          <h3>Te respondemos</h3>
+          <p>Te contestaremos personalmente.</p>
         </div>
 
         <div class="step-card">
-          <div class="step-card__icon">
-            <i data-lucide="handshake"></i>
-          </div>
-          <span class="step-card__number">2</span>
-          <h3>Hablamos contigo</h3>
-          <p>Te responderemos personalmente.</p>
-        </div>
-
-        <div class="steps-arrow">
-          <i data-lucide="arrow-right"></i>
+          <div class="step-card__icon">🏊</div>
+          <h3>Ven a probar</h3>
+          <p>Te invitaremos a un entrenamiento de prueba.</p>
         </div>
 
         <div class="step-card">
-          <div class="step-card__icon">
-            <i data-lucide="waves"></i>
-          </div>
-          <span class="step-card__number">3</span>
-          <h3>Entrenamiento de prueba</h3>
-          <p>Te invitamos a probar una sesión con nosotros.</p>
-        </div>
-
-        <div class="steps-arrow">
-          <i data-lucide="arrow-right"></i>
-        </div>
-
-        <div class="step-card">
-          <div class="step-card__icon">
-            <i data-lucide="heart"></i>
-          </div>
-          <span class="step-card__number">4</span>
-          <h3>Únete al club</h3>
-          <p>Si te gusta el ambiente, te explicamos cómo hacerte socio.</p>
+          <div class="step-card__icon">🤝</div>
+          <h3>Únete</h3>
+          <p>Si te gusta el ambiente, te explicaremos cómo hacerte socio.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: ¿Quién puede venir? -->
+  <!-- Section 3: Disciplinas -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="eyebrow">Requisitos</p>
-        <h2>¿Quién puede unirse?</h2>
-        <p>Halegatos es un club LGTBIQ+ inclusivo y abierto a cualquier persona con ganas de practicar deporte.</p>
+        <h2>Disciplinas</h2>
+        <p>Encuentra tu lugar en el agua. Tenemos grupos adaptados a todos los niveles, desde iniciación hasta competición máster.</p>
       </div>
 
-      <div class="info-grid">
-        <div class="info-card">
-          <div class="info-card__icon">🏊</div>
-          <h3>Todos los niveles</h3>
-          <p>Desde personas que quieren volver a nadar después de mucho tiempo hasta deportistas con experiencia en competición máster.</p>
-        </div>
+      <div class="disciplines-grid">
+        <a href="{{ '/disciplines/' | relative_url }}" class="discipline-card">
+          <div class="discipline-card__icon">🏊</div>
+          <h3>Natación</h3>
+          <p>Entrenamientos organizados por calles según ritmos y objetivos en diferentes piscinas de Madrid.</p>
+        </a>
 
-        <div class="info-card">
-          <div class="info-card__icon">👥</div>
-          <h3>Mayores de 18 años</h3>
-          <p>Un ambiente LGTBIQ+ inclusivo, diverso y de total respeto mutuo para personas adultas de todas las edades.</p>
-        </div>
+        <a href="{{ '/disciplines/' | relative_url }}" class="discipline-card">
+          <div class="discipline-card__icon">🌊</div>
+          <h3>Aguas Abiertas</h3>
+          <p>Entrenamientos específicos y salidas conjuntas a competiciones en el mar o pantanos.</p>
+        </a>
 
-        <div class="info-card">
-          <div class="info-card__icon">📍</div>
-          <h3>Entrenamos en Madrid</h3>
-          <p>Disponemos de secciones activas de natación presencial en piscina, aguas abiertas de temporada y saltos de trampolín.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Planes sociales + entrenamiento online (HaleFederado) -->
-  <section id="online" class="section">
-    <div class="container">
-      <div class="online-box">
-        <div class="online-box__icon">🌍</div>
-        <div class="online-box__content">
-          <h2>Planes sociales + entrenamiento online</h2>
-          <p class="online-box__highlight">Vive Halegatos desde cualquier lugar</p>
-          <p>No hace falta vivir en Madrid para formar parte de Halegatos. Si entrenas desde otra ciudad o país, puedes recibir tus entrenamientos online y participar activamente en la vida social y actividades del club.</p>
-          
-          <div class="online-box__includes">
-            <h3>Incluye:</h3>
-            <ul class="includes-list">
-              <li><span>🏊</span> Planes de entrenamiento personalizados</li>
-              <li><span>🌍</span> Entrenamiento desde cualquier lugar del mundo</li>
-              <li><span>🎉</span> Acceso completo a HaleOcio</li>
-              <li><span>👥</span> Comunidad activa durante todo el año</li>
-            </ul>
-          </div>
-          
-          <div class="online-box__actions">
-            <a 
-              href="mailto:halegatos@halegatos.com?subject=Información sobre entrenamientos online / HaleFederado&body=¡Hola! Me gustaría recibir información sobre la opción de entrenamientos online / HaleFederado con Halegatos.%0D%0A%0D%0ACuéntanos brevemente tus objetivos o experiencia:%0D%0A-%20Objetivos:%20%0D%0A-%20¿Desde%20dónde%20entrenarías?:%20%0D%0A%0D%0A¡Muchas gracias!" 
-              class="btn-primary"
-            >
-              🌍 Quiero entrenar online
-            </a>
-          </div>
-        </div>
+        <a href="{{ '/disciplines/' | relative_url }}" class="discipline-card">
+          <div class="discipline-card__icon">🤸</div>
+          <h3>Saltos</h3>
+          <p>Aprende o perfecciona tus saltos de trampolín y plataforma con nuestro equipo especializado.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Section 5: HaleOcio - Fuera del agua -->
-  <section id="ocio" class="section section--alt">
-    <div class="container">
-      <div class="ocio-split-box">
-        <div class="ocio-split-box__media">
-          <img src="{{ '/static/images/ocio_viajeviena.png' | relative_url }}" alt="Grupo de Halegatos de viaje en Viena" />
-        </div>
-        <div class="ocio-split-box__content">
-          <span class="ocio-split-box__tag">HaleOcio</span>
-          <h2>Halegatos también se vive fuera del agua</h2>
-          <p class="ocio-split-box__highlight">Más que un entrenamiento</p>
-          <p>En Halegatos creemos que un club también se construye fuera de la piscina. Con HaleOcio organizamos actividades durante todo el año para que sea fácil conocer gente, hacer equipo y compartir grandes momentos desde el primer día.</p>
-          
-          <div class="ocio-split-box__activities">
-            <h3>Encontrarás actividades como:</h3>
-            <ul class="activities-list">
-              <li><span>✈️</span> Viajes y escapadas</li>
-              <li><span>🎭</span> Teatro y cultura</li>
-              <li><span>🎉</span> Fiestas y celebraciones</li>
-              <li><span>🍽️</span> Cenas y encuentros</li>
-              <li><span>🤝</span> Actividades organizadas por los propios socios</li>
-            </ul>
-          </div>
-          
-          <p class="ocio-split-box__footer-text">No hace falta conocer a nadie antes de venir. La mayoría de las personas llegan solas y encuentran aquí un grupo con el que compartir deporte y ocio.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5.5: Precio -->
+  <!-- Section 4: Entrenamiento online + HaleOcio -->
   <section class="section">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="eyebrow">Transparencia</p>
+        <h2>🌍 Planes sociales + entrenamiento online</h2>
+        <p>No hace falta vivir en Madrid para formar parte de Halegatos. Si entrenas desde otra ciudad o país, puedes recibir tus entrenamientos online y participar en la vida social del club.</p>
+      </div>
+
+      <div class="split-cards-section">
+        <!-- Online Card -->
+        <div class="split-card">
+          <div class="split-card__header">
+            <div class="split-card__icon">🌍</div>
+            <h2>Entrenamiento online</h2>
+          </div>
+          <p>Mantén tu forma física y sigue una planificación profesional desde cualquier lugar del mundo.</p>
+          <ul class="split-list">
+            <li><span>✔</span> Desde cualquier ciudad o país.</li>
+            <li><span>✔</span> Planes de entrenamiento personalizados según tus objetivos.</li>
+            <li><span>✔</span> Seguimiento por parte de nuestros entrenadores.</li>
+            <li><span>✔</span> Formarás parte de la comunidad Halegatos.</li>
+          </ul>
+          <a href="#contacto" class="btn-secondary">🌍 Quiero entrenar online</a>
+        </div>
+
+        <!-- HaleOcio Card -->
+        <div class="split-card">
+          <div class="split-card__header">
+            <div class="split-card__icon">🎉</div>
+            <h2>Acceso a HaleOcio</h2>
+          </div>
+          <p>Halegatos también se vive fuera del agua. Nuestro grupo de ocio hace que el club se viva desde el primer día.</p>
+          <ul class="split-list">
+            <li><span>✔</span> Viajes y escapadas a otras ciudades.</li>
+            <li><span>✔</span> Teatro, cine y actividades culturales.</li>
+            <li><span>✔</span> Fiestas y celebraciones del club.</li>
+            <li><span>✔</span> Encuentros y acciones compartidas para hacer equipo.</li>
+          </ul>
+          <a href="{{ '/haleocio/' | relative_url }}" class="btn-secondary">🎉 Descubrir HaleOcio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Cuotas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading section-heading--center">
         <h2>¿Cuánto cuesta?</h2>
-        <p>Una cuota simplificada para dar el primer paso y formar parte de nuestra comunidad.</p>
+        <p>Una cuota simplificada y transparente.</p>
       </div>
 
       <div class="price-box">
         <div class="price-value-container">
-          <span class="price-value">Desde 12 €</span>
-          <span class="price-period">/ mes</span>
+          <span class="price-value"><small>Desde</small> 12 €</span>
+          <span class="price-period">al mes</span>
         </div>
         
         <ul class="price-list">
           <li><span>✔</span> Entrenamientos del deporte elegido</li>
-          <li><span>✔</span> Acceso a la comunidad</li>
-          <li><span>✔</span> Acceso a HaleOcio</li>
-          <li><span>✔</span> Eventos y encuentros del club</li>
-          <li><span>✔</span> Seguro / Licencia federativa (si aplica)</li>
+          <li><span>✔</span> Acceso a la comunidad Halegatos</li>
+          <li><span>✔</span> Participación en todas las actividades de HaleOcio</li>
+          <li><span>✔</span> Seguro y gestión de licencia federativa (si aplica)</li>
         </ul>
 
-        <a href="#contacto" class="btn-primary">Ver todas las cuotas</a>
+        <a href="#contacto" class="btn-primary">Consultar todas las opciones</a>
       </div>
     </div>
   </section>
 
   <!-- Section 6: Preguntas frecuentes -->
-  <section class="section section--alt">
+  <section class="section">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="eyebrow">FAQ</p>
         <h2>Preguntas frecuentes</h2>
         <p>Resolvemos las dudas habituales de quienes quieren empezar a entrenar.</p>
       </div>
@@ -1157,39 +811,31 @@ keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club depo
     </div>
   </section>
 
-  <!-- Section 7: Corporate Stripe (¿Preparado para conocer...?) -->
-  <section class="join-corporate-stripe">
-    <div class="join-corporate-stripe__inner">
-      <h2>¿Preparado para conocer Halegatos?</h2>
-      <p>Ven a un entrenamiento o escríbenos y te ayudaremos a encontrar el grupo que mejor encaje contigo.</p>
-      <a href="#contacto" class="btn-primary">Contactar</a>
-    </div>
-  </section>
-
-  <!-- Section 8: Contact Section -->
-  <section id="contacto" class="section">
+  <!-- Section 7: Contact Section -->
+  <section id="contacto" class="section section--alt">
     <div class="container">
-      <div class="join-contact-v2">
-        <h2>Contacta con nosotros</h2>
-        <p>Cuéntanos un poco sobre ti y te responderemos personalmente para organizar tu entrenamiento o resolver tus dudas.</p>
+      <div class="join-contact-v3">
+        <h2>Cuéntanos qué buscas</h2>
+        <p class="contact-lead">Selecciona el deporte que más te interesa y te ayudaremos a encontrar el grupo que mejor encaja contigo.</p>
         
-        <h3 class="join-contact-v2__list-title">Cuando nos escribas, indícanos:</h3>
-        <ul class="join-contact-v2__list">
-          <li><span>🏊</span> El deporte que más te interesa (Natación, Aguas Abiertas, Saltos, HaleFederado/Online).</li>
-          <li><span>📍</span> Dónde vives o desde dónde quieres entrenar.</li>
-          <li><span>⭐</span> Tu nivel o experiencia previa (si la tienes).</li>
-        </ul>
+        <div class="contact-options">
+          <div class="contact-chip"><span>🏊</span> Natación</div>
+          <div class="contact-chip"><span>🌊</span> Aguas abiertas</div>
+          <div class="contact-chip"><span>🤸</span> Saltos</div>
+          <div class="contact-chip"><span>🌍</span> Entrenamiento online</div>
+          <div class="contact-chip"><span>🎉</span> HaleOcio</div>
+        </div>
 
-        <p class="join-contact-v2__footer-text">Nosotros te diremos cuál es el grupo que mejor encaja contigo y cómo venir a un entrenamiento de prueba gratuito.</p>
+        <p class="contact-disclaimer">Si no sabes qué modalidad elegir, no pasa nada. Te asesoraremos personalmente al recibir tu correo.</p>
         
         <a 
-          href="mailto:halegatos@halegatos.com?subject=Quiero contactar con Halegatos&body=¡Hola! Me gustaría contactar con Halegatos para obtener más información.%0D%0A%0D%0APor favor, indícanos:%0D%0A-%20Deporte%20de%20interés:%20%0D%0A-%20Dónde%20vives%20o%20desde%20dónde%20quieres%20entrenar:%20%0D%0A-%20Nivel%20o%20experiencia%20previa:%20%0D%0A%0D%0A¡Muchas gracias!" 
-          class="btn-primary"
+          href="mailto:halegatos@halegatos.com?subject=Quiero unirme a Halegatos&body=¡Hola! Me gustaría contactar con Halegatos para obtener más información.%0D%0A%0D%0AMis intereses:%0D%0A-%20Deporte%20principal:%20%0D%0A-%20Dónde%20vivo:%20%0D%0A-%20Mi%20nivel%20o%20experiencia:%20%0D%0A%0D%0A¡Muchas gracias!" 
+          class="btn-huge"
         >
-          Quiero contactar
+          Escríbenos ahora
         </a>
 
-        <div class="join-contact-v2__details">
+        <div class="join-contact-v3__details">
           <a href="mailto:halegatos@halegatos.com">
             <i data-lucide="mail"></i> halegatos@halegatos.com
           </a>
