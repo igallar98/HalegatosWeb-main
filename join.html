@@ -5,107 +5,1202 @@ title: Únete al Club Deportivo LGTBI+ y Natación Halegatos
 description: "Únete a Halegatos Madrid: deporte, ocio, natación y actividades sociales en la comunidad deportiva LGTBI+ y gay más activa y diversa."
 keywords: unirse club deportivo lgtbi, apuntarse club natacion madrid, club deportivo lgtb madrid, club gay madrid, halegatos inscripcion, deporte inclusivo madrid
 ---
-{% assign join = site.data.join %}
 
-<section class="join-hero">
-  <div class="join-hero__media">
-    <img src="{{ join.hero.image | relative_url }}" alt="{{ join.hero.alt }}" />
-  </div>
+<div class="join-page-v2">
+  <!-- Styles are inline to prevent polluting other pages and to ensure page-specific styling -->
+  <style>
+    .join-page-v2 {
+      --color-success: #10b981;
+      --color-success-hover: #059669;
+      --color-success-bg: rgba(16, 185, 129, 0.1);
+      --color-primary-gradient: linear-gradient(135deg, var(--color-brand), var(--color-brand-strong));
+      --color-green-gradient: linear-gradient(135deg, var(--color-success), var(--color-success-hover));
+    }
 
-  <div class="container join-hero__inner">
-    <div class="join-hero__content">
-      <p class="eyebrow join-hero__eyebrow">{{ join.hero.eyebrow }}</p>
+    /* Hero Section */
+    .join-hero-v2 {
+      position: relative;
+      min-height: 90svh;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+      background: var(--color-dark);
+    }
 
-      <h1>{{ join.hero.title_html }}</h1>
-      <p class="join-hero__lead">{{ join.hero.lead }}</p>
+    .join-hero-v2__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
 
-      <div class="join-hero__chips">
-        {% for chip in join.hero.chips %}
-          <span class="join-chip">{{ chip }}</span>
-        {% endfor %}
+    .join-hero-v2__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.65;
+    }
+
+    .join-hero-v2__bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(180deg, rgba(7, 38, 59, 0.3) 0%, rgba(7, 38, 59, 0.8) 80%, var(--color-bg) 100%),
+        linear-gradient(90deg, rgba(7, 38, 59, 0.6) 0%, rgba(7, 38, 59, 0.3) 50%, rgba(7, 38, 59, 0.6) 100%);
+    }
+
+    .join-hero-v2__content {
+      position: relative;
+      z-index: 2;
+      padding: calc(var(--header-offset) + 2rem) 1rem 4rem;
+      max-width: 800px;
+    }
+
+    .join-hero-v2__eyebrow {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-cyan);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .join-hero-v2__title {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0 0 1rem;
+    }
+
+    .join-hero-v2__subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin: 0 0 1.25rem;
+    }
+
+    .join-hero-v2__lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 2rem;
+      max-width: 620px;
+    }
+
+    .join-hero-v2__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Button styles */
+    .btn-primary, .btn-secondary, .btn-huge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--color-green-gradient);
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.45);
+    }
+
+    .btn-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+    .btn-dot::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      animation: pulse-ring 1.5s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Steps Section */
+    .steps-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .steps-flow {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+    }
+
+    .step-card {
+      flex: 1;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .step-card__icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(0, 132, 183, 0.08);
+      color: var(--color-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-card:nth-child(even) .step-card__icon {
+      background: rgba(255, 107, 26, 0.08);
+      color: var(--color-accent);
+    }
+
+    .step-card__icon i {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    .step-card__number {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(17, 35, 56, 0.08);
+    }
+
+    .step-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem 0;
+      color: var(--color-text);
+    }
+
+    .step-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-text-soft);
+      margin: 0;
+    }
+
+    .steps-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brand);
+      opacity: 0.5;
+    }
+
+    .steps-arrow i {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    @media (max-width: 1023px) {
+      .steps-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+      }
+    }
+
+    /* Info Grid Section */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .info-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-card__icon {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-card__icon i {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    .info-card__icon--blue {
+      background: rgba(0, 132, 183, 0.1);
+      color: var(--color-brand);
+    }
+
+    .info-card__icon--orange {
+      background: rgba(255, 107, 26, 0.1);
+      color: var(--color-accent);
+    }
+
+    .info-card__icon--cyan {
+      background: rgba(35, 176, 222, 0.1);
+      color: var(--color-cyan);
+    }
+
+    .info-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0 0 0.75rem 0;
+      color: var(--color-text);
+    }
+
+    .info-card p {
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--color-text-soft);
+      margin: 0;
+    }
+
+    /* Online Training Section */
+    .online-box {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-soft);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .online-box {
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2.5rem;
+        align-items: start;
+      }
+    }
+
+    .online-box__icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: rgba(35, 176, 222, 0.1);
+      color: var(--color-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .online-box__icon {
+        margin-bottom: 0;
+      }
+    }
+
+    .online-box__icon i {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    .online-box__content h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin: 0 0 1rem;
+      color: var(--color-text);
+      letter-spacing: -0.03em;
+    }
+
+    .online-box__highlight {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-brand);
+      margin: 0 0 1.25rem;
+    }
+
+    .online-box__content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text-soft);
+      margin: 0 0 2rem;
+    }
+
+    .online-box__includes {
+      margin-bottom: 2rem;
+    }
+
+    .online-box__includes h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin: 0 0 1rem;
+      color: var(--color-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .includes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 580px) {
+      .includes-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .includes-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .includes-list li i {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-accent);
+    }
+
+    /* Ocio Split Section */
+    .ocio-split-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 1024px) {
+      .ocio-split-box {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .ocio-split-box__media {
+      min-height: 280px;
+      position: relative;
+    }
+
+    @media (min-width: 1024px) {
+      .ocio-split-box__media {
+        min-height: 100%;
+      }
+    }
+
+    .ocio-split-box__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .ocio-split-box__content {
+      padding: 2.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .ocio-split-box__content {
+        padding: 4rem 3.5rem;
+      }
+    }
+
+    .ocio-split-box__tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .ocio-split-box h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin: 0 0 1rem;
+      letter-spacing: -0.03em;
+      color: var(--color-text);
+    }
+
+    .ocio-split-box__highlight {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-brand);
+      margin: 0 0 1.25rem;
+    }
+
+    .ocio-split-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text-soft);
+      margin: 0 0 1.5rem;
+    }
+
+    .ocio-split-box__activities {
+      margin-bottom: 1.5rem;
+    }
+
+    .ocio-split-box__activities h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin: 0 0 1rem;
+      color: var(--color-text);
+    }
+
+    .activities-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 580px) {
+      .activities-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .activities-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .activities-list li span {
+      font-size: 1.2rem;
+    }
+
+    .ocio-split-box__footer-text {
+      font-style: italic;
+      color: var(--color-text-soft);
+      margin: 0 !important;
+      font-size: 0.95rem !important;
+    }
+
+    /* Banner Box Section */
+    .banner-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 1024px) {
+      .banner-box {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    .banner-box__media {
+      min-height: 250px;
+      position: relative;
+    }
+
+    @media (min-width: 1024px) {
+      .banner-box__media {
+        min-height: 100%;
+      }
+    }
+
+    .banner-box__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .banner-box__content {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .banner-box__content {
+        padding: 4rem 3.5rem;
+      }
+    }
+
+    .banner-box__tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .banner-box h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin: 0 0 1rem;
+      letter-spacing: -0.03em;
+      color: var(--color-text);
+    }
+
+    .banner-box__highlight {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-brand);
+      margin: 0 0 1.25rem;
+    }
+
+    .banner-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text-soft);
+      margin: 0 0 2rem;
+    }
+
+    .banner-box__actions .btn-primary {
+      width: 100%;
+    }
+
+    @media (min-width: 480px) {
+      .banner-box__actions .btn-primary {
+        width: auto;
+      }
+    }
+
+    /* FAQ Accordion Section */
+    .faq-accordion {
+      max-width: 800px;
+      margin: 3rem auto 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(17, 35, 56, 0.2);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: var(--color-text);
+      font-weight: 800;
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      gap: 1rem;
+    }
+
+    .faq-chevron {
+      width: 1.25rem;
+      height: 1.25rem;
+      transition: transform 0.25s ease;
+      color: var(--color-brand);
+    }
+
+    .faq-trigger[aria-expanded="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+    }
+
+    .faq-content__inner {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-content p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--color-text-soft);
+    }
+
+    /* CTA Footer Section */
+    .join-cta-v2 {
+      background: linear-gradient(135deg, var(--color-dark) 0%, #0c3350 100%);
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      margin: 2rem 0;
+    }
+
+    .join-cta-v2::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(35, 176, 222, 0.15) 0%, transparent 70%);
+      bottom: -150px;
+      left: -150px;
+    }
+
+    .join-cta-v2::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 107, 26, 0.1) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+    }
+
+    .join-cta-v2__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .join-cta-v2__inner {
+        padding: 6rem 1rem;
+      }
+    }
+
+    .join-cta-v2 h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .join-cta-v2 p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 2.5rem 0;
+    }
+
+    .btn-huge {
+      background: var(--color-green-gradient);
+      color: #ffffff;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      padding: 1.25rem 2.5rem;
+      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+      width: 100%;
+    }
+
+    @media (min-width: 480px) {
+      .btn-huge {
+        width: auto;
+      }
+    }
+
+    .btn-huge:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(16, 185, 129, 0.55);
+    }
+
+    .btn-huge-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+
+    .btn-huge-dot::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      animation: pulse-ring 1.5s infinite;
+      opacity: 0.8;
+    }
+
+    .join-cta-v2__details {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+    }
+
+    .cta-detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.2s ease;
+    }
+
+    .cta-detail-link:hover {
+      color: #ffffff;
+    }
+
+    .cta-detail-link i {
+      width: 1.2rem;
+      height: 1.2rem;
+      color: var(--color-cyan);
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <section class="join-hero-v2">
+    <div class="join-hero-v2__bg">
+      <img src="{{ '/static/images/CABECERA-03.jpg' | relative_url }}" alt="Entrenamiento de Halegatos en piscina" />
+    </div>
+    <div class="join-hero-v2__content container">
+      <span class="join-hero-v2__eyebrow">Únete a Halegatos</span>
+      <h1 class="join-hero-v2__title">¿Listo para lanzarte?</h1>
+      <p class="join-hero-v2__subtitle">Natación • Aguas Abiertas • Saltos</p>
+      <p class="join-hero-v2__lead">Entrena, compite, viaja y forma parte de una comunidad. Conoce al equipo y prueba un entrenamiento antes de decidir.</p>
+      <div class="join-hero-v2__actions">
+        <a 
+          href="mailto:halegatos@halegatos.com?subject=Quiero probar un entrenamiento con Halegatos&body=¡Hola! Quiero venir a probar un entrenamiento con Halegatos.%0D%0A%0D%0ACuéntanos brevemente tu experiencia en natación o saltos y cuándo te vendría bien entrenar:%0D%0A-%20Experiencia%20previa:%20%0D%0A-%20Disponibilidad%20para%20entrenar:%20%0D%0A%0D%0A¡Muchas gracias!" 
+          class="btn-primary"
+        >
+          <span class="btn-dot"></span> Quiero venir a probar
+        </a>
+        <a href="mailto:halegatos@halegatos.com" class="btn-secondary">
+          <i data-lucide="mail"></i> Escribir por correo
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container join-intro">
-    <div class="section-heading">
-      <p class="eyebrow">{{ join.intro.eyebrow }}</p>
-      <h2>{{ join.intro.title }}</h2>
-      <p>{{ join.intro.text }}</p>
-    </div>
+  <!-- Section 2: Así de fácil -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Paso a paso</p>
+        <h2>Así de fácil</h2>
+        <p>No es necesario hacerse socio antes de venir. Lo primero es que vengas a entrenar, conozcas al equipo y resuelvas tus dudas.</p>
+      </div>
 
-    <div class="join-steps">
-      {% for step in join.intro.steps %}
-        <article class="join-step">
-          <span class="join-step__number">{{ forloop.index }}</span>
-          <div class="join-step__content">
-            {% if step.title %}
-              <h3>{{ step.title }}</h3>
-              <p>{{ step.text }}</p>
-            {% else %}
-              <p>{{ step }}</p>
-            {% endif %}
+      <div class="steps-flow">
+        <div class="step-card">
+          <div class="step-card__icon">
+            <i data-lucide="mail"></i>
           </div>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt">
-  <div class="container join-cards">
-    {% for item in join.disciplines %}
-      <article class="join-card join-card--{{ item.accent }}">
-        <div class="join-card__header">
-          <p class="eyebrow">{{ item.eyebrow }}</p>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.description }}</p>
+          <span class="step-card__number">1</span>
+          <h3>Contactas</h3>
+          <p>Escríbenos contándonos un poco sobre ti.</p>
+        </div>
+        
+        <div class="steps-arrow">
+          <i data-lucide="arrow-right"></i>
         </div>
 
-        {% if item.featured_note %}
-          <div class="join-card__feature join-card__feature--{{ item.featured_note.accent | default: item.accent }}">
-            <p class="join-card__feature-label">{{ item.featured_note.label }}</p>
-            <h3>{{ item.featured_note.title }}</h3>
-            <p>{{ item.featured_note.text }}</p>
+        <div class="step-card">
+          <div class="step-card__icon">
+            <i data-lucide="handshake"></i>
           </div>
-        {% endif %}
+          <span class="step-card__number">2</span>
+          <h3>Hablamos contigo</h3>
+          <p>Te responderemos personalmente.</p>
+        </div>
 
-        {% if item.highlights %}
-          <ul class="pill-list">
-            {% for highlight in item.highlights %}
-              <li class="pill">{{ highlight }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+        <div class="steps-arrow">
+          <i data-lucide="arrow-right"></i>
+        </div>
 
-        {% if item.contacts %}
-          <div class="join-card__info">
-            {% for contact in item.contacts %}
-              <div class="join-card__block{% if forloop.first and item.accent == 'orange' %} join-card__block--notice{% endif %}">
-                <h3>{{ contact.title }}</h3>
-                <p>{{ contact.text }}</p>
-                <a class="join-card__mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
-              </div>
-            {% endfor %}
+        <div class="step-card">
+          <div class="step-card__icon">
+            <i data-lucide="waves"></i>
           </div>
-        {% endif %}
+          <span class="step-card__number">3</span>
+          <h3>Entrenamiento de prueba</h3>
+          <p>Te invitamos a probar una sesión con nosotros.</p>
+        </div>
 
-        {% if item.actions %}
-          <div class="join-card__actions">
-            {% for action in item.actions %}
-              <a
-                class="{% if action.style == 'secondary' %}button--secondary{% else %}button{% endif %}"
-                href="{{ action.url }}"
-                {% if action.url contains '://' %}target="_blank" rel="noopener noreferrer"{% endif %}
-              >
-                {{ action.label }}
-              </a>
-            {% endfor %}
+        <div class="steps-arrow">
+          <i data-lucide="arrow-right"></i>
+        </div>
+
+        <div class="step-card">
+          <div class="step-card__icon">
+            <i data-lucide="heart"></i>
           </div>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-</section>
+          <span class="step-card__number">4</span>
+          <h3>Únete al club</h3>
+          <p>Si te gusta el ambiente, te explicamos cómo hacerte socio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: ¿Quién puede venir? -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Requisitos</p>
+        <h2>¿Quién puede unirse?</h2>
+        <p>Halegatos es un club LGTBIQ+ inclusivo y abierto a cualquier persona con ganas de practicar deporte.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card__icon info-card__icon--blue">
+            <i data-lucide="waves"></i>
+          </div>
+          <h3>Todos los niveles</h3>
+          <p>Desde personas que quieren volver a nadar después de mucho tiempo hasta deportistas con experiencia en competición máster.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__icon info-card__icon--orange">
+            <i data-lucide="users"></i>
+          </div>
+          <h3>Mayores de 18 años</h3>
+          <p>Un ambiente LGTBIQ+ inclusivo, diverso y de total respeto mutuo para personas adultas de todas las edades.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__icon info-card__icon--cyan">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3>Entrenamos en Madrid</h3>
+          <p>Disponemos de secciones activas de natación presencial en piscina, aguas abiertas de temporada y saltos de trampolín.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: También puedes entrenar desde cualquier lugar (HaleFederado) -->
+  <section class="section">
+    <div class="container">
+      <div class="online-box">
+        <div class="online-box__icon">
+          <i data-lucide="globe"></i>
+        </div>
+        <div class="online-box__content">
+          <h2>También puedes entrenar desde cualquier lugar</h2>
+          <p class="online-box__highlight">Entrenamientos online adaptados a tus objetivos</p>
+          <p>Si no puedes entrenar presencialmente en Madrid, también puedes unirte al club y seguir formando parte de la comunidad activa de Halegatos.</p>
+          
+          <div class="online-box__includes">
+            <h3>Incluye:</h3>
+            <ul class="includes-list">
+              <li><i data-lucide="calendar"></i> Planes de entrenamiento online</li>
+              <li><i data-lucide="waves"></i> Seguimiento deportivo</li>
+              <li><i data-lucide="users"></i> Acceso a la vida del club</li>
+              <li><i data-lucide="party-popper"></i> Participación en actividades y eventos</li>
+            </ul>
+          </div>
+          
+          <div class="online-box__actions">
+            <a 
+              href="mailto:halegatos@halegatos.com?subject=Información sobre entrenamientos online / HaleFederado&body=¡Hola! Me gustaría recibir información sobre la opción de entrenamientos online / HaleFederado con Halegatos.%0D%0A%0D%0ACuéntanos brevemente tus objetivos o experiencia:%0D%0A-%20Objetivos:%20%0D%0A-%20¿Desde%20dónde%20entrenarías?:%20%0D%0A%0D%0A¡Muchas gracias!" 
+              class="btn-secondary"
+            >
+              <i data-lucide="info"></i> Quiero información
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: HaleOcio - Fuera del agua -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="ocio-split-box">
+        <div class="ocio-split-box__media">
+          <img src="{{ '/static/images/ocio_viajeviena.png' | relative_url }}" alt="Grupo de Halegatos de viaje en Viena" />
+        </div>
+        <div class="ocio-split-box__content">
+          <span class="ocio-split-box__tag">HaleOcio</span>
+          <h2>Halegatos también se vive fuera del agua</h2>
+          <p class="ocio-split-box__highlight">Más que un entrenamiento</p>
+          <p>En Halegatos creemos que un club también se construye fuera de la piscina. Con HaleOcio organizamos actividades durante todo el año para que sea fácil conocer gente, hacer equipo y compartir grandes momentos desde el primer día.</p>
+          
+          <div class="ocio-split-box__activities">
+            <h3>Encontrarás actividades como:</h3>
+            <ul class="activities-list">
+              <li><span>✈️</span> Viajes y escapadas</li>
+              <li><span>🎭</span> Teatro y cultura</li>
+              <li><span>🎉</span> Fiestas y celebraciones</li>
+              <li><span>🍽️</span> Cenas y encuentros</li>
+              <li><span>🤝</span> Planes organizados por socios</li>
+            </ul>
+          </div>
+          
+          <p class="ocio-split-box__footer-text">No hace falta conocer a nadie antes de venir. La mayoría de las personas llegan solas y encuentran aquí un grupo con el que compartir deporte y ocio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Lo más importante (Group Banner) -->
+  <section class="section">
+    <div class="container">
+      <div class="banner-box">
+        <div class="banner-box__media">
+          <img src="{{ '/static/images/header-principal.png' | relative_url }}" alt="Grupo de socios y nadadores del Club Halegatos" />
+        </div>
+        <div class="banner-box__content">
+          <span class="banner-box__tag">Lo más importante</span>
+          <h2>Queremos conocerte antes de tramitar el alta</h2>
+          <p class="banner-box__highlight">Por eso no utilizamos formularios de inscripción directos en la web.</p>
+          <p>La mayoría de nuestros socios llegaron exactamente igual que tú: con dudas y sin conocer a nadie en el equipo. Escríbenos, hablamos contigo y organizamos un entrenamiento de prueba sin compromiso para que conozcas al equipo y a los entrenadores de primera mano.</p>
+          <div class="banner-box__actions">
+            <a 
+              href="mailto:halegatos@halegatos.com?subject=Quiero probar un entrenamiento con Halegatos&body=¡Hola! Quiero venir a probar un entrenamiento con Halegatos.%0D%0A%0D%0ACuéntanos brevemente tu experiencia en natación o saltos y cuándo te vendría bien entrenar:%0D%0A-%20Experiencia%20previa:%20%0D%0A-%20Disponibilidad%20para%20entrenar:%20%0D%0A%0D%0A¡Muchas gracias!" 
+              class="btn-primary"
+            >
+              Quiero venir a probar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Preguntas frecuentes -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">FAQ</p>
+        <h2>Preguntas frecuentes</h2>
+        <p>Resolvemos las dudas habituales de quienes quieren empezar a entrenar.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>¿Necesito experiencia previa?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content__inner">
+              <p>No, nos adaptamos a todos los perfiles. Las calles de la piscina están organizadas por ritmos y niveles: desde personas que vuelven a practicar deporte tras años de inactividad hasta nadadores máster experimentados que compiten a nivel nacional o autonómico. Si vienes a saltos, también hay plazas de iniciación.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>¿Puedo probar un entrenamiento antes de hacerme socio?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content__inner">
+              <p>¡Sí! De hecho es lo primero que te pedimos. Queremos que pruebes una sesión presencial con nosotros para que sientas el ambiente de entrenamiento, veas los horarios y resuelvas todas tus dudas antes de realizar ningún trámite.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>¿Cuánto cuesta unirse al club?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content__inner">
+              <p>El primer entrenamiento de prueba es completamente gratuito. Si decides continuar, te informaremos detalladamente por correo sobre las cuotas de piscina (que varían según los días de entrenamiento elegidos) y la cuota anual del club. Al escribirnos te daremos las cifras exactas y actualizadas de la temporada.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>¿Qué material deportivo necesito llevar?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content__inner">
+              <p>Para natación solo necesitas traer bañador, gorro de natación y gafas. La piscina cuenta con material auxiliar (tablas, pull-buoys) pero si tienes tus propias aletas o palas, puedes traerlas. Para saltos, recuerda traer ropa deportiva cómoda (camiseta y pantalón) para el calentamiento en seco.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>¿Dónde entrenáis exactamente?</span>
+            <i data-lucide="chevron-down" class="faq-chevron"></i>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content__inner">
+              <p>Nuestros entrenamientos presenciales tienen lugar en diferentes centros deportivos municipales de Madrid (como el CDM Marqués de Samaranch, el Centro Deportivo M86 o Viding Alcántara). Escríbenos y te indicaremos los horarios y la piscina exacta asignada según tu nivel y modalidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: ¿Te animas? -->
+  <section class="join-cta-v2 container">
+    <div class="join-cta-v2__inner">
+      <h2>¿Te animas?</h2>
+      <p>La mayoría de nuestros socios llegaron exactamente igual que tú: con dudas y sin conocer a nadie. Escríbenos y ven a probar un entrenamiento.</p>
+      
+      <a 
+        href="mailto:halegatos@halegatos.com?subject=Quiero probar un entrenamiento con Halegatos&body=¡Hola! Quiero venir a probar un entrenamiento con Halegatos.%0D%0A%0D%0ACuéntanos brevemente tu experiencia en natación o saltos y cuándo te vendría bien entrenar:%0D%0A-%20Experiencia%20previa:%20%0D%0A-%20Disponibilidad%20para%20entrenar:%20%0D%0A%0D%0A¡Muchas gracias!" 
+        class="btn-huge"
+      >
+        <span class="btn-huge-dot"></span> Contactar con Halegatos
+      </a>
+
+      <div class="join-cta-v2__details">
+        <a href="mailto:halegatos@halegatos.com" class="cta-detail-link">
+          <i data-lucide="mail"></i> halegatos@halegatos.com
+        </a>
+        <a href="https://www.instagram.com/halegatosclub/" target="_blank" rel="noopener noreferrer" class="cta-detail-link">
+          <i data-lucide="instagram"></i> Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Accordion logic script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const triggers = document.querySelectorAll(".faq-trigger");
+    
+    triggers.forEach(trigger => {
+      trigger.addEventListener("click", function() {
+        const item = this.parentElement;
+        const content = item.querySelector(".faq-content");
+        const isExpanded = this.getAttribute("aria-expanded") === "true";
+        
+        // Close all other open items
+        document.querySelectorAll(".faq-item").forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherTrigger = otherItem.querySelector(".faq-trigger");
+            const otherContent = otherItem.querySelector(".faq-content");
+            otherTrigger.setAttribute("aria-expanded", "false");
+            otherContent.style.maxHeight = null;
+          }
+        });
+        
+        // Toggle current item
+        if (isExpanded) {
+          this.setAttribute("aria-expanded", "false");
+          content.style.maxHeight = null;
+        } else {
+          this.setAttribute("aria-expanded", "true");
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
