@@ -26,7 +26,10 @@ page_class: home
         <span>{{ home.hero.primary_label }}</span>
         <i data-lucide="arrow-right"></i>
       </a>
-      <a class="button--light" href="{{ home.hero.secondary_url | relative_url }}">{{ home.hero.secondary_label }}</a>
+      <a class="button--light" href="{{ home.hero.secondary_url }}" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="calendar"></i>
+        <span>{{ home.hero.secondary_label }}</span>
+      </a>
     </div>
   </div>
 </section>

@@ -3413,3 +3413,47 @@ button {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
+
+/* Calendar Button Styles */
+.site-nav__calendar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  flex-shrink: 0;
+}
+
+.site-nav__calendar:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.page--home .site-header:not(.is-scrolled) .site-nav__calendar {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.page--home .site-header:not(.is-scrolled) .site-nav__calendar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu__calendar {
+  grid-column: span 2;
+}
+
+@media (max-width: 420px) {
+  .mobile-menu__calendar {
+    grid-column: span 1;
+  }
+}
+

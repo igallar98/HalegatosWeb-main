@@ -4,8 +4,8 @@ hero:
   lead: "Nataci&oacute;n, aguas abiertas y saltos en un ambiente diverso, de ocio y profesional."
   primary_label: "&iexcl;Pru&eacute;banos sin compromiso!"
   primary_url: "/join/"
-  secondary_label: "Conoce el club"
-  secondary_url: "/about/"
+  secondary_label: "Calendario de eventos"
+  secondary_url: "https://calendar.google.com/calendar/embed?src=c_193bde0aa9bcc2b35420193a38e8c9377278bc0ac6781ba5246a9bc4b713b49b%40group.calendar.google.com&ctz=Europe%2FMadrid"
   image: "/static/images/header-principal.png"
   image_alt: "Cabecera principal del Club Halegatos"
 highlights:
