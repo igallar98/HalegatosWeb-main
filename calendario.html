@@ -9,11 +9,26 @@ description: "Calendario de próximos eventos, competiciones y actividades socia
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="margin-bottom: 1.5rem;">Próximos eventos</h1>
       
-      <a class="button" href="https://calendar.google.com/calendar/u/0/r?cid=c_193bde0aa9bcc2b35420193a38e8c9377278bc0ac6781ba5246a9bc4b713b49b@group.calendar.google.com" target="_blank" rel="noopener noreferrer" style="margin-bottom: 0.5rem;">
-        <i data-lucide="calendar-plus"></i>
-        <span>Añadir a mi calendario</span>
-      </a>
-      <p style="font-size: 0.85rem; color: var(--color-text-muted, #7c98af); opacity: 0.8;">Añadir a mi calendario y recibir notificaciones antes de los eventos del club.</p>
+      <div style="display: flex; justify-content: center; margin-bottom: 0.5rem;">
+        <a id="dynamic-calendar-btn" class="button" href="https://calendar.google.com/calendar/u/0/r?cid=c_193bde0aa9bcc2b35420193a38e8c9377278bc0ac6781ba5246a9bc4b713b49b@group.calendar.google.com" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="calendar-plus"></i>
+          <span>Añadir a mi calendario</span>
+        </a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-muted, #7c98af); opacity: 0.8;">Se sincronizará automáticamente para avisarte antes de los eventos del club.</p>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var btn = document.getElementById("dynamic-calendar-btn");
+          var isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+          
+          if (isApple) {
+            // Usa el protocolo webcal:// para forzar la suscripción nativa en Apple Calendar
+            btn.href = "webcal://calendar.google.com/calendar/ical/c_193bde0aa9bcc2b35420193a38e8c9377278bc0ac6781ba5246a9bc4b713b49b%40group.calendar.google.com/public/basic.ics";
+            btn.removeAttribute("target"); // No necesita abrir pestaña nueva en iOS/Mac
+          }
+        });
+      </script>
     </div>
 
     <div style="border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-soft); background: #fff;">
